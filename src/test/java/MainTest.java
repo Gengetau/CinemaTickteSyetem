@@ -68,9 +68,6 @@ public class MainTest {
 		userCtrl.setCinemaView(cinemaView);
 		userCtrl.setAdminView(adminView);
 		adminCtrl.setAdminView(adminView);
-		adminCtrl.setCinemaView(cinemaView);
-		adminCtrl.setOrderView(orderView);
-		adminCtrl.setInformationView(informationView);
 		cinemaCtrl.setOrderView(orderView);
 		cinemaCtrl.setInformationView(informationView);
 		cinemaCtrl.setCinemaView(cinemaView);
