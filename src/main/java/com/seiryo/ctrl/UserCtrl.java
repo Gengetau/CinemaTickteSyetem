@@ -188,7 +188,7 @@ public class UserCtrl {
 				newUser.setUserState("正常");
 				
 				// 6.更新数据库
-				userService.addUser(newUser);
+				newUser = userService.addUser(newUser);
 				userService.addUserInfo(newUser);
 				System.out.println("注册成功！");
 				return;

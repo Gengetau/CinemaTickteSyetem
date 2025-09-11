@@ -67,16 +67,19 @@ public class UserServiceImpl implements UserService {
 	 * @MethodName: addUser
 	 * @Description: 添加新用户
 	 */
-	public void addUser(User user) {
+	public User addUser(User user) {
 		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
 			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 			int rows = userMapper.insertNewUser(user);
+			User newUser = userMapper.selectUserByUsername(user.getUsername());
 			if (rows > 0) {
 				sqlSession.commit(); // 操作成功，提交事务
 				System.out.println("新用户添加成功！");
+				return newUser;
 			} else {
 				sqlSession.rollback(); // 操作失败，回滚事务
 				System.out.println("新用户添加失败！");
+				return null;
 			}
 		}
 	}
@@ -265,6 +268,7 @@ public class UserServiceImpl implements UserService {
 				System.out.println("新用户添加失败！");
 			} catch (Exception e) {
 				System.out.println("添加用户时发生数据库错误！");
+				// noinspection CallToPrintStackTrace
 				e.printStackTrace();
 			}
 		} else {

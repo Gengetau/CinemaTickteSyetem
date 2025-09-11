@@ -314,3 +314,12 @@
 2025-09-11 16:19:15.416 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
 2025-09-11 16:19:15.416 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
 2025-09-11 16:19:15.417 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 17:21:29.392 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 17:21:29.410 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Gengetsu1!(String)
+2025-09-11 17:21:29.419 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 0
+2025-09-11 17:21:29.486 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==>  Preparing: INSERT INTO My_User (Username, Userpass) VALUES (?, ?);
+2025-09-11 17:21:29.487 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==> Parameters: Gengetsu1!(String), 221319(String)
+2025-09-11 17:21:29.488 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - <==    Updates: 1
+2025-09-11 17:21:29.548 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 17:21:29.548 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Gengetsu1!(String)
+2025-09-11 17:21:29.549 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 0

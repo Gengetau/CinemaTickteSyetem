@@ -34,7 +34,7 @@ public interface UserService {
 	 * @MethodName: addUser
 	 * @Description: 添加新用户
 	 */
-	void addUser(User user);
+	User addUser(User user);
 	
 	/**
 	 * @param user 注册的新用户
