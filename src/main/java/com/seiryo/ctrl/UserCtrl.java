@@ -81,15 +81,15 @@ public class UserCtrl {
 				if (loginUser != null) {
 					cinemaView.cinemaView(loginUser);
 				}
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 用户注册
 				register();
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 预览
 				preview();
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 4:// 管理员登录
 				Admin loginAdmin = adminCtrl.adminLogin();
@@ -97,7 +97,7 @@ public class UserCtrl {
 				if (loginAdmin != null) {
 					adminView.adminView(loginAdmin);
 				}
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 5:// 退出系统
 				System.out.println("欢迎下次光临neko影城");
@@ -188,8 +188,7 @@ public class UserCtrl {
 				newUser.setUserState("正常");
 				
 				// 6.更新数据库
-				newUser = userService.addUser(newUser);
-				userService.addUserInfo(newUser);
+				userService.addUser(newUser);
 				System.out.println("注册成功！");
 				return;
 			}
@@ -232,7 +231,7 @@ public class UserCtrl {
 		System.out.println("========== 电影列表 ==========");
 		
 		// 2.打印标题行
-		System.out.printf("%-5s %-20s %-25s %-10s %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
+		System.out.printf("%-10s \t %-18s \t %-19s \t %-16s \t %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
 		
 		// 3.获取电影列表
 		List<Cinema> cinemas = cinemaService.getAllCinemas();
@@ -244,7 +243,7 @@ public class UserCtrl {
 		
 		// 4.打印电影列表
 		for (Cinema cinema : cinemas) {
-			System.out.printf("%-5d %-20s %-25s %-10s %-10s\n", cinema.getCinemaId(), cinema.getCinemaName(), cinema.getReleaseTime(), cinema.getCinemaPrice(), cinema.getMovieTime());
+			System.out.println(cinema);
 		}
 	}
 }

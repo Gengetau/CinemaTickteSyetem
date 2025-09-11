@@ -67,47 +67,33 @@ public class UserServiceImpl implements UserService {
 	 * @MethodName: addUser
 	 * @Description: 添加新用户
 	 */
-	public User addUser(User user) {
+	public void addUser(User user) {
 		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
 			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-			int rows = userMapper.insertNewUser(user);
-			User newUser = userMapper.selectUserByUsername(user.getUsername());
-			if (rows > 0) {
-				sqlSession.commit(); // 操作成功，提交事务
-				System.out.println("新用户添加成功！");
-				return newUser;
-			} else {
-				sqlSession.rollback(); // 操作失败，回滚事务
-				System.out.println("新用户添加失败！");
-				return null;
-			}
-		}
-	}
-	
-	/**
-	 * @param user 注册的新用户
-	 * @MethodName: addUserInfo
-	 * @Description: 添加新用户数据
-	 */
-	public void addUserInfo(User user) {
-		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
-			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-			// 需要先查询新用户的ID
-			User createdUser = userMapper.selectUserByUsername(user.getUsername());
-			if (createdUser != null) {
-				user.setUserid(createdUser.getUserid());
-				int rows = userMapper.insertNewUserInfo(user);
-				if (rows > 0) {
+			
+			// 第一步：插入基本用户信息
+			int userRows = userMapper.insertNewUser(user);
+			
+			// 第二步：如果第一步成功，newUser对象现在应该已经自动获得了数据库生成的ID
+			if (userRows > 0 && user.getUserid() != null) {
+				// 第三步：插入详细信息
+				int userInfoRows = userMapper.insertNewUserInfo(user);
+				if (userInfoRows > 0) {
+					// 两步都成功，提交事务
 					sqlSession.commit();
-					System.out.println("新用户数据添加成功！");
-				} else {
-					sqlSession.rollback();
-					System.out.println("新用户数据添加失败！");
+					System.out.println("新用户及信息添加成功！");
+					return; // 成功后直接返回
 				}
-			} else {
-				sqlSession.rollback();
-				System.out.println("找不到刚创建的用户，数据添加失败！");
 			}
+			
+			// 如果有任何一步失败，则回滚
+			sqlSession.rollback();
+			System.out.println("新用户添加失败！");
+			
+		} catch (Exception e) {
+			System.out.println("添加用户时发生数据库错误！");
+			// noinspection CallToPrintStackTrace
+			e.printStackTrace();
 		}
 	}
 	
@@ -248,29 +234,8 @@ public class UserServiceImpl implements UserService {
 			newUser.setUserPhone(null);
 			newUser.setUserState("正常");
 			
-			// 将两个插入操作放在一个事务中
-			try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
-				UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-				int userRows = userMapper.insertNewUser(newUser);
-				if (userRows > 0) {
-					User createdUser = userMapper.selectUserByUsername(newUser.getUsername());
-					newUser.setUserid(createdUser.getUserid());
-					int userInfoRows = userMapper.insertNewUserInfo(newUser);
-					if (userInfoRows > 0) {
-						sqlSession.commit();
-						System.out.println("增加用户成功！");
-						logService.insertLog(admin, "增加新用户" + newUser.getUsername() + "成功");
-						return;
-					}
-				}
-				// 如果有任何一步失败，则回滚
-				sqlSession.rollback();
-				System.out.println("新用户添加失败！");
-			} catch (Exception e) {
-				System.out.println("添加用户时发生数据库错误！");
-				// noinspection CallToPrintStackTrace
-				e.printStackTrace();
-			}
+			addUser(newUser);
+			logService.insertLog(admin, "增加新用户" + newUser.getUsername() + "成功");
 		} else {
 			logService.insertLog(admin, "尝试增加已存在的用户 " + inputName + " 失败");
 			System.out.println("增加失败！账号已存在，请重新输入账号");

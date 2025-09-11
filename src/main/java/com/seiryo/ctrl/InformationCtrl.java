@@ -30,12 +30,16 @@ public class InformationCtrl {
 		switch (choice) {
 			case 1:// 修改密码
 				updatePassword(user);
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 充值余额
 				chargeMoney(user);
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 修改手机号
 				updateUserPhone(user);
+				ScannerUtil.pressAnyKeyToReturn();
+				break;
 			case 4:// 退出
 				System.out.println("正在返回主界面");
 				return false;

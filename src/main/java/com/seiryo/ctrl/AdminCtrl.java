@@ -6,9 +6,6 @@ import com.seiryo.service.LogService;
 import com.seiryo.util.CaptchaUtil;
 import com.seiryo.util.ScannerUtil;
 import com.seiryo.view.AdminView;
-import com.seiryo.view.CinemaView;
-import com.seiryo.view.InformationView;
-import com.seiryo.view.OrderView;
 
 /**
  * @author 11567
@@ -21,9 +18,6 @@ public class AdminCtrl {
 	private AdminService adminService;
 	private LogService logService;
 	private AdminView adminView;
-	private CinemaView cinemaView;
-	private OrderView orderView;
-	private InformationView informationView;
 	
 	public void setAdminService(AdminService adminService) {
 		this.adminService = adminService;
@@ -33,37 +27,10 @@ public class AdminCtrl {
 		this.logService = logService;
 	}
 	
-	public AdminView getAdminView() {
-		return adminView;
-	}
-	
 	public void setAdminView(AdminView adminView) {
 		this.adminView = adminView;
 	}
 	
-	public CinemaView getCinemaView() {
-		return cinemaView;
-	}
-	
-	public void setCinemaView(CinemaView cinemaView) {
-		this.cinemaView = cinemaView;
-	}
-	
-	public OrderView getOrderView() {
-		return orderView;
-	}
-	
-	public void setOrderView(OrderView orderView) {
-		this.orderView = orderView;
-	}
-	
-	public InformationView getInformationView() {
-		return informationView;
-	}
-	
-	public void setInformationView(InformationView informationView) {
-		this.informationView = informationView;
-	}
 	
 	/**
 	 * @return 返回登录成功的管理员对象
@@ -119,19 +86,19 @@ public class AdminCtrl {
 		switch (option) {
 			case "管理用户":
 				adminView.userManageView(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case "管理电影":
 				adminView.movieManageView(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case "管理VIP":
 				adminView.vipManageView(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case "管理订单":
 				adminView.orderManageView(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case "操作日志":
 				adminView.loginManageView(admin);
@@ -155,19 +122,19 @@ public class AdminCtrl {
 		switch (choice) {
 			case 1:// 增加用户
 				adminService.insertUser(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 删除用户
 				adminService.deleteUser(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 修改用户
 				adminService.updateUser(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 4:// 查询用户
 				adminService.queryUser(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 5:// 返回管理界面
 				System.out.println("正在返回管理界面");
@@ -187,19 +154,19 @@ public class AdminCtrl {
 		switch (choice) {
 			case 1:// 增加电影
 				adminService.insertMovie(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 删除电影
 				adminService.deleteMovie(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 修改电影
 				adminService.updateMovie(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 4:// 查询电影
 				adminService.queryMovie(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 5:// 返回管理界面
 				System.out.println("正在返回管理界面");
@@ -219,19 +186,19 @@ public class AdminCtrl {
 		switch (choice) {
 			case 1:// 增加VIP等级
 				adminService.insertVip(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 删除VIP等级
 				adminService.deleteVip(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 修改VIP等级
 				adminService.updateVip(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 4:// 查询VIP等级
 				adminService.queryVip(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 5:// 返回管理界面
 				System.out.println("正在返回管理界面");
@@ -251,15 +218,15 @@ public class AdminCtrl {
 		switch (choice) {
 			case 1:// 查询订单
 				adminService.queryOrder(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 修改订单状态
 				adminService.updateOrder(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 删除订单
 				adminService.deleteOrder(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 4:// 返回管理界面
 				System.out.println("正在返回管理界面");
@@ -279,7 +246,7 @@ public class AdminCtrl {
 		switch (choice) {
 			case 1:
 				logService.selectAllLog(admin);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 返回管理界面
 				System.out.println("正在返回管理界面");

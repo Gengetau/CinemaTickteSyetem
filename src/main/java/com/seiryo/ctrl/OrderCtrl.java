@@ -40,11 +40,11 @@ public class OrderCtrl {
 		switch (choice) {
 			case 1:// 查看订单
 				checkOrder(orders);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 2:// 取消订单
 				cancelOrder(orders);
-				ScannerUtil.nextLine("输入任意键返回");
+				ScannerUtil.pressAnyKeyToReturn();
 				break;
 			case 3:// 返回主界面
 				System.out.println("正在返回主界面");

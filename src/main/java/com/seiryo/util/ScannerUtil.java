@@ -24,6 +24,16 @@ public class ScannerUtil {
 		return SC.nextLine();
 	}
 	
+	
+	/**
+	 * @MethodName: pressAnyKeyToReturn
+	 * @Description: 专属的“按任意键返回”方法
+	 */
+	public static void pressAnyKeyToReturn() {
+		System.out.println("\n(按任意键以继续...)");
+		SC.nextLine();
+	}
+	
 	/**
 	 * @param prompt 提示语句
 	 * @return 返回正确的手机号

@@ -34,14 +34,7 @@ public interface UserService {
 	 * @MethodName: addUser
 	 * @Description: 添加新用户
 	 */
-	User addUser(User user);
-	
-	/**
-	 * @param user 注册的新用户
-	 * @MethodName: addUserInfo
-	 * @Description: 添加新用户数据
-	 */
-	void addUserInfo(User user);
+	void addUser(User user);
 	
 	/**
 	 * @param user 需要更新的用户
