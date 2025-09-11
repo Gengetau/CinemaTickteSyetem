@@ -38,7 +38,7 @@
     </insert>
 
     <!--     更新用户余额和积分 -->
-    <update id = "updateUserMoneyAndPoints" parameterType = "Long">
+    <update id = "updateUserMoneyAndPoints" parameterType = "com.seiryo.pojo.User">
         UPDATE My_User_Info
         SET Usermoney = #{userMoney},
             Userpoint = #{userPoint}
@@ -46,10 +46,10 @@
     </update>
 
     <!--     更新用户会员等级 -->
-    <update id = "updateUserVipName" parameterType = "Long">
+    <update id = "updateUserVipName" parameterType = "com.seiryo.pojo.User">
         UPDATE My_User_Info
         SET Uservip = #{userVip}
-        WHERE Userid = #{userid}''
+        WHERE Userid = #{userid};
     </update>
 
     <!-- 更新密码 -->

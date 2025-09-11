@@ -105,7 +105,7 @@ public class UserServiceImpl implements UserService {
 	public void updateUserMoneyAndPoints(User user) {
 		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
 			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-			int rows = userMapper.updateUserMoneyAndPoints(user.getUserid());
+			int rows = userMapper.updateUserMoneyAndPoints(user);
 			if (rows > 0) {
 				sqlSession.commit();
 				System.out.println("用户余额和积分更新成功！");
@@ -124,7 +124,7 @@ public class UserServiceImpl implements UserService {
 	public void updateUserMoney(User user) {
 		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
 			UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-			int rows = userMapper.updateUserMoneyAndPoints(user.getUserid());
+			int rows = userMapper.updateUserMoneyAndPoints(user);
 			if (rows > 0) {
 				sqlSession.commit();
 				System.out.println("充值成功！当前余额为：" + user.getUserMoney());
@@ -149,7 +149,7 @@ public class UserServiceImpl implements UserService {
 			
 			if (newVipName != null && !newVipName.equals(user.getUserVip())) {
 				user.setUserVip(newVipName);
-				int rows = userMapper.updateUserVipName(user.getUserid());
+				int rows = userMapper.updateUserVipName(user);
 				if (rows > 0) {
 					sqlSession.commit();
 					System.out.println("会员等级提升！当前等级为：" + user.getUserVip());

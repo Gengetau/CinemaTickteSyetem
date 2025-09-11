@@ -386,3 +386,72 @@
 2025-09-11 18:12:28.844 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
 2025-09-11 18:12:28.860 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
 2025-09-11 18:12:28.868 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:31:02.532 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 18:31:02.548 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 18:31:02.556 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:32:14.910 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 18:32:14.911 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Gengetsu1!(String)
+2025-09-11 18:32:14.914 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 1
+2025-09-11 18:32:48.842 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 18:32:48.843 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 18:32:48.844 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:32:57.319 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 18:32:57.319 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 1(Long)
+2025-09-11 18:32:57.320 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 0
+2025-09-11 18:32:57.362 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 18:32:57.362 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 18:32:57.363 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:33:09.566 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 18:33:09.566 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: N(String)
+2025-09-11 18:33:09.567 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 1
+2025-09-11 18:33:09.599 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 18:33:09.600 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 18:33:09.602 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 18:33:24.921 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==>  Preparing: SELECT Vipdiscount FROM Vip_Info WHERE Vipname = ?;
+2025-09-11 18:33:24.921 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==> Parameters: 无(String)
+2025-09-11 18:33:24.923 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - <==      Total: 1
+2025-09-11 18:34:19.896 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 18:34:19.897 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 18:34:19.897 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:34:27.998 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 18:34:27.998 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 101(Long)
+2025-09-11 18:34:28.000 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 18:34:28.031 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 18:34:28.031 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 18:34:28.031 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 18:34:43.620 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==>  Preparing: SELECT Vipdiscount FROM Vip_Info WHERE Vipname = ?;
+2025-09-11 18:34:43.620 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==> Parameters: 无(String)
+2025-09-11 18:34:43.621 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - <==      Total: 1
+2025-09-11 18:34:48.629 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 18:34:48.629 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 18:34:48.630 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:36:14.192 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 18:36:14.192 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Mseter01@(String)
+2025-09-11 18:36:14.192 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 0
+2025-09-11 18:36:36.541 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 18:36:36.541 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Master01@(String)
+2025-09-11 18:36:36.545 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 1
+2025-09-11 18:36:40.853 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 18:36:40.855 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Master01@(String)
+2025-09-11 18:36:40.858 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 1
+2025-09-11 18:37:03.627 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 18:37:03.629 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: Master01@(String)
+2025-09-11 18:37:03.629 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 1
+2025-09-11 18:37:07.825 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 18:37:07.825 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 18:37:07.826 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 18:37:12.611 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 18:37:12.611 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 101(Long)
+2025-09-11 18:37:12.611 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 18:37:12.635 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 18:37:12.635 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 18:37:12.636 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 18:37:18.403 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==>  Preparing: SELECT Vipdiscount FROM Vip_Info WHERE Vipname = ?;
+2025-09-11 18:37:18.404 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==> Parameters: 钻石VIP(String)
+2025-09-11 18:37:18.405 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - <==      Total: 1
+2025-09-11 18:37:27.489 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - ==>  Preparing: UPDATE My_User_Info SET Usermoney = ?, Userpoint = ? WHERE Userid = ?;
+2025-09-11 18:37:27.489 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - ==> Parameters: 10001(Long), 10001(Long), 10001(Long)
+2025-09-11 18:37:27.498 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - <==    Updates: 1
+2025-09-11 18:37:27.527 [main] DEBUG c.s.m.V.selectVipNameByPoints1 - ==>  Preparing: SELECT Vipname FROM Vip_Info WHERE Vippoint <= ? -- 所有小于等于当前积分的等级 ORDER BY Vippoint DESC LIMIT 1;-- 取第一个
+2025-09-11 18:37:27.527 [main] DEBUG c.s.m.V.selectVipNameByPoints1 - ==> Parameters: 1327(Long)
+2025-09-11 18:37:27.528 [main] DEBUG c.s.m.V.selectVipNameByPoints1 - <==      Total: 1

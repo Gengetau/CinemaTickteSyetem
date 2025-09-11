@@ -36,20 +36,20 @@ public interface UserMapper {
 	int insertNewUserInfo(User user);
 	
 	/**
-	 * @param userid 需要更新的用户id
+	 * @param user 需要更新的用户
 	 * @return 返回受影响的行数
 	 * @MethodName: updateUserMoneyAndPoints
 	 * @Description: 更新用户余额和积分
 	 */
-	int updateUserMoneyAndPoints(Long userid);
+	int updateUserMoneyAndPoints(User user);
 	
 	/**
-	 * @param userid 需要更新的用户id
+	 * @param user 需要更新的用户
 	 * @return 返回受影响的行数
 	 * @MethodName: updateUserVipName
 	 * @Description: 更新用户会员等级
 	 */
-	int updateUserVipName(Long userid);
+	int updateUserVipName(User user);
 	
 	/**
 	 * @param user 当前用户

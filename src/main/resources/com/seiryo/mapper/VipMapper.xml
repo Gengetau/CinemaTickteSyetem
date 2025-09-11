@@ -25,7 +25,7 @@
     </select>
 
     <!-- 根据积分查询对应会员等级2 -->
-    <select id = "selectVipPointByPoints2" resultType = "Integer" parameterType = "Long">
+    <select id = "selectVipNameByPoints2" resultType = "Integer" parameterType = "Long">
         SELECT Vippoint
         FROM Vip_Info
         WHERE Vippoint &gt;= #{points} -- 所有大于当前积分的等级

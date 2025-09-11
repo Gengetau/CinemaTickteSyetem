@@ -238,7 +238,7 @@ public class CinemaCtrl {
 			// 7.1获取购买数量
 			int count = selectedSeats.size();// int类型数据转化为BigDecimal类型
 			// 7.2调用折扣方法获得最终价格
-			System.out.println("您是" + user.getUserVip());
+			System.out.println("您的会员等级是:" + user.getUserVip());
 			BigDecimal price = cinemaService.getCinemaPrice(user, count, selectedCinema.getCinemaPrice());
 			System.out.println("\n您已选择 " + selectedSeats.size() + " 个座位：" + String.join(", ", selectedSeats) + "总共：" + price + "￥");
 			String confirm = ScannerUtil.nextLine("确认并支付？ (Y/N): ");
