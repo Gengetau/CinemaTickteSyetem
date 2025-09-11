@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- Mapper代理开发 -->
+<!-- Mapper接口和sql映射文件编译后在同一目录下 -->
+<!-- namespace名称空间: 为mapper接口全限定名-->
+<mapper namespace = "com.seiryo.mapper.CinemaMapper">
+    <!--  查找所有上架电影 -->
+    <select id = "selectAllCinemas" resultType = "com.seiryo.pojo.Cinema">
+        SELECT *
+        FROM Cinema_Info
+        WHERE Cinemastate = '上架';
+    </select>
+
+    <!--   根据电影id查找电影   -->
+    <select id = "selectCinemaById" parameterType = "Long" resultType = "com.seiryo.pojo.Cinema">
+        SELECT *
+        FROM Cinema_Info
+        WHERE Cinemaid = #{cinemaId};
+    </select>
+
+    <!--     根据电影名查找电影 -->
+    <select id = "selectCinemasByName" parameterType = "String" resultType = "com.seiryo.pojo.Cinema">
+        SELECT *
+        FROM Cinema_Info
+        WHERE Cinemaname LIKE CONCAT('%', #{cinemaName}, '%');-- 模糊查询
+    </select>
+
+    <!--     添加新电影 -->
+    <insert id = "insertNewCinema" parameterType = "com.seiryo.pojo.Cinema">
+        INSERT INTO Cinema_Info(Cinemaname, Releasetime, Cinemaprice, Movietime, Cinemastate, Cinemaseats)
+        VALUES (#{cinemaName}, #{releaseTime}, #{cinemaPrice}, #{movieTime}, #{cinemaState}, #{cinemaSeats});
+    </insert>
+
+    <!--     删除电影 -->
+    <delete id = "deleteCinema" parameterType = "long">
+        DELETE
+        FROM Cinema_Info
+        WHERE Cinemaid = #{cinemaId};
+    </delete>
+
+    <!--     修改电影 -->
+    <update id = "updateCinema" parameterType = "com.seiryo.pojo.Cinema">
+        UPDATE Cinema_Info
+        SET Cinemaname  = #{cinemaName},
+            Releasetime = #{releaseTime},
+            Cinemaprice = #{cinemaPrice},
+            Movietime   = #{movieTime},
+            Cinemastate = #{cinemaState},
+            Cinemaseats = #{cinemaSeats}
+        WHERE Cinemaid = #{cinemaId};
+    </update>
+</mapper>

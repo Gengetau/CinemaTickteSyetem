@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- Mapper代理开发 -->
+<!-- Mapper接口和sql映射文件编译后在同一目录下 -->
+<!-- namespace名称空间: 为mapper接口全限定名-->
+<mapper namespace = "com.seiryo.mapper.VipMapper">
+<!--     通过会员等级查找会员折扣 -->
+    <select id = "selectVipDiscountByVipName" resultType = "Double" parameterType = "String">
+        SELECT Vipdiscount
+        FROM Vip_Info
+        WHERE Vipname = #{vipName};
+    </select>
+
+    <!-- 根据积分查询对应会员等级1 -->
+    <select id = "selectVipNameByPoints1" resultType = "String" parameterType = "Long">
+        SELECT Vipname
+        FROM Vip_Info
+        WHERE Vippoint &lt;= #{points} -- 所有小于等于当前积分的等级
+        ORDER BY Vippoint DESC
+        LIMIT 1;-- 取第一个
+    </select>
+
+    <!-- 根据积分查询对应会员等级2 -->
+    <select id = "selectVipPointByPoints2" resultType = "Integer" parameterType = "Long">
+        SELECT Vippoint
+        FROM Vip_Info
+        WHERE Vippoint &gt;= #{points} -- 所有大于当前积分的等级
+        ORDER BY Vippoint-- 正序排列
+        LIMIT 1;-- 取第一个
+    </select>
+
+    <!-- 获取所有VIP等级 -->
+    <select id = "selectAllVips" resultType = "com.seiryo.pojo.Vip">
+        SELECT *
+        FROM Vip_Info;
+    </select>
+
+    <!-- 增加VIP等级 -->
+    <insert id = "insertNewVip" parameterType = "com.seiryo.pojo.Vip">
+        INSERT INTO Vip_Info(Vippoint, Vipname, Vipdiscount)
+        VALUES (#{vipPoint}, #{vipName}, #{vipDiscount});
+    </insert>
+
+    <!-- 删除VIP等级 -->
+    <delete id = "deleteVip" parameterType = "int">
+        DELETE
+        FROM Vip_Info
+        WHERE Vipid = #{vipId};
+    </delete>
+
+    <!-- 修改VIP等级 -->
+    <update id = "updateVip" parameterType = "com.seiryo.pojo.Vip">
+        UPDATE Vip_Info
+        SET Vippoint    = #{vipPoint},
+            Vipname     = #{vipName},
+            Vipdiscount = #{vipDiscount}
+        WHERE Vipid = #{vipId};
+    </update>
+
+    <!-- 根据ID查询VIP等级 -->
+    <select id = "selectVipById" parameterType = "int" resultType = "com.seiryo.pojo.Vip">
+        SELECT *
+        FROM Vip_Info
+        WHERE Vipid = #{vipId};
+    </select>
+</mapper>

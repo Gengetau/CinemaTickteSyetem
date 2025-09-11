@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- Mapper代理开发 -->
+<!-- Mapper接口和sql映射文件编译后在同一目录下 -->
+<!-- namespace名称空间: 为mapper接口全限定名-->
+<mapper namespace = "com.seiryo.mapper.UserMapper">
+  <!--   查找所有用户 -->
+    <!--   resultType:返回参数的类型 -->
+    <select id = "selectAllUsers" resultType = "com.seiryo.pojo.User">
+        SELECT Mu.Userid,
+               Mu.Username,
+               Mu.Userpass,
+               Mui.Usermoney,
+               Mui.Userpoint,
+               Mui.Uservip,
+               Mui.Userphone,
+               Mui.Userstate
+        FROM My_User AS Mu
+                 JOIN My_User_Info AS Mui
+                      ON Mu.Userid = Mui.Userid
+  </select>
+
+    <!--     添加新用户 -->
+    <insert id = "insertNewUser" parameterType = "com.seiryo.pojo.User">
+        INSERT INTO My_User (Username, Userpass)
+        VALUES (#{username}, #{userpass});
+    </insert>
+
+    <!--     添加新用户信息 -->
+    <insert id = "insertNewUserInfo" parameterType = "com.seiryo.pojo.User">
+        INSERT INTO My_User_Info(Userid, Usermoney, Userpoint, Uservip, Userphone, Userstate)
+        VALUES (#{userid}, #{userMoney}, #{userPoint}, #{userVip}, #{userPhone}, #{userState});
+    </insert>
+
+    <!--     更新用户余额和积分 -->
+    <update id = "updateUserMoneyAndPoints" parameterType = "Long">
+        UPDATE My_User_Info
+        SET Usermoney = #{userMoney},
+            Userpoint = #{userPoint}
+        WHERE Userid = #{userid};
+    </update>
+
+    <!--     更新用户会员等级 -->
+    <update id = "updateUserVipName" parameterType = "Long">
+        UPDATE My_User_Info
+        SET Uservip = #{userVip}
+        WHERE Userid = #{userid}''
+    </update>
+
+    <!-- 更新密码 -->
+    <update id = "updateUserPass" parameterType = "com.seiryo.pojo.User">
+        UPDATE My_User
+        SET Userpass = #{userpass}
+        WHERE Userid = #{userid};
+    </update>
+
+    <!-- 更新手机号 -->
+    <update id = "updateUserPhone" parameterType = "com.seiryo.pojo.User">
+        UPDATE My_User_Info
+        SET Userphone = #{userPhone}
+        WHERE Userid = #{userid};
+    </update>
+
+    <!-- 更新用户账号状态 -->
+    <update id = "updateUserState" parameterType = "com.seiryo.pojo.User">
+        UPDATE My_User_Info
+        SET Userstate = #{userState}
+        WHERE Userid = #{userid};
+    </update>
+
+    <!-- 查询单个用户 -->
+    <select id = "selectUserByUsername" parameterType = "String" resultType = "com.seiryo.pojo.User">
+        SELECT Mu.Userid,
+               Mu.Username,
+               Mu.Userpass,
+               Mui.Usermoney,
+               Mui.Userpoint,
+               Mui.Uservip,
+               Mui.Userphone,
+               Mui.Userstate
+        FROM Cinemats.My_User AS Mu
+                 JOIN Cinemats.My_User_Info AS Mui
+                      ON Mu.Userid = Mui.Userid
+        WHERE Mu.Username = #{username};
+    </select>
+
+    <!-- 管理员修改用户信息 -->
+    <update id = "updateUserByAdmin" parameterType = "com.seiryo.pojo.User">
+        UPDATE My_User AS Mu
+            JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+        SET Mu.Userpass   = #{userpass},
+            Mui.Usermoney = #{userMoney},
+            Mui.Userpoint = #{userPoint},
+            Mui.Userphone = #{userPhone},
+            Mui.Userstate = #{userState}
+        WHERE Mu.Userid = #{userid};
+    </update>
+</mapper>

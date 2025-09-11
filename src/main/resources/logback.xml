@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Neko在这里给您加上了 debug="true" 这个“侦测魔法”喵！ -->
+<configuration>
+
+    <!-- ======================== 1. 定义变量喵 ======================== -->
+    <!-- 日志文件存放的文件夹路径 -->
+    <property name = "LOG_HOME" value = "logs"/>
+
+
+    <!-- ======================== 2. 定义“信使” Appender ======================== -->
+
+    <!-- 第一个信使：专门往控制台送日志的 ConsoleAppender 喵 -->
+    <appender name = "CONSOLE" class = "ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 日志的格式，就像信的信纸一样喵 -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <!-- 编码格式 -->
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <!-- 第二个信使：专门往文件里送信的 RollingFileAppender 喵 -->
+    <!-- 它很聪明，每天都会创建一个新的日志文件，还会自动把旧的打包压缩喵 -->
+    <appender name = "FILE" class = "ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- 日志文件的路径和名字 -->
+        <file>${LOG_HOME}/myapp.log</file>
+        <rollingPolicy class = "ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 每天滚动的日志文件名格式 -->
+            <fileNamePattern>${LOG_HOME}/myapp.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <!-- 最多保存30天的日志文件喵 -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+
+    <!-- ======================== 3. 定义“日志调度中心” Logger ======================== -->
+
+    <!-- 这里可以为我们自己的项目包设置专门的日志级别喵 -->
+    <!-- 比如，我们把 com.seiryo 这个包的日志级别设为 DEBUG，就能看到更详细的信息了 -->
+    <logger name = "com.seiryo" level = "DEBUG"/>
+
+    <!-- MyBatis自带的日志太多了，可以把它设为 INFO 或者 WARN，让它安静一点喵 -->
+    <logger name = "org.apache.ibatis" level = "INFO"/>
+    <logger name = "java.sql" level = "INFO"/>
+
+
+    <!-- ======================== 4. “总调度中心” Root Logger ======================== -->
+    <!-- 这是所有日志的根，默认的日志级别是 INFO 喵 -->
+    <root level = "INFO">
+        <!-- 告诉总调度中心，要把收到的信同时发给 CONSOLE 和 FILE 这两个信使喵 -->
+        <appender-ref ref = "CONSOLE"/>
+        <appender-ref ref = "FILE"/>
+    </root>
+
+</configuration>

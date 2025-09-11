@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- Mapper代理开发 -->
+<!-- Mapper接口和sql映射文件编译后在同一目录下 -->
+<!-- namespace名称空间: 为mapper接口全限定名-->
+<mapper namespace = "com.seiryo.mapper.LogMapper">
+    <!-- 查找所有日志 -->
+    <select id = "selectAllLog" resultType = "com.seiryo.pojo.Log">
+        SELECT *
+        FROM Log_Info;
+    </select>
+
+    <!-- 插入新日志 -->
+    <insert id = "insertLog" parameterType = "com.seiryo.pojo.Log">
+        INSERT INTO Log_Info(Loginfo, Logdate, Logname)
+        VALUES (#{logInfo}, #{logDate}, #{logName});
+    </insert>
+</mapper>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<!-- Mapper代理开发 -->
+<!-- Mapper接口和sql映射文件编译后在同一目录下 -->
+<!-- namespace名称空间: 为mapper接口全限定名-->
+<mapper namespace = "com.seiryo.mapper.OrderMapper">
+    <!-- 创建映射地图 -->
+    <resultMap id = "OrderWithDetailsResultMap" type = "com.seiryo.pojo.Order">
+        <!-- 1. 先映射订单表(MY_ORDER)自己的字段 -->
+        <id column = "order_id" property = "orderId"/>
+        <result column = "total_price" property = "totalPrice"/>
+
+        <!--
+            2. 使用 <association> 关联，来映射“一对一”的User对象！
+            property="user": 对应Order类里的'user'属性
+            javaType="com.seiryo.pojo.UserVO": 指明这个user属性的类型
+        -->
+        <association property = "user" javaType = "com.seiryo.pojo.User">
+            <!-- 把从SQL里查出来的、属于用户信息的字段，映射到User的属性里 -->
+            <id column = "user_id" property = "userid"/>
+            <result column = "user_name" property = "username"/>
+            <result column = "user_pass" property = "userpass"/>
+            <result column = "user_money" property = "userMoney"/>
+            <result column = "user_point" property = "userPoint"/>
+            <result column = "user_vip" property = "userVip"/>
+            <result column = "user_phone" property = "userPhone"/>
+            <result column = "user_state" property = "userState"/>
+        </association>
+
+        <!--
+            3. 使用 <association> 关联，来映射“一对一”的Cinema对象！
+        -->
+        <association property = "cinema" javaType = "com.seiryo.pojo.Cinema">
+            <id column = "cinema_id" property = "cinemaId"/>
+            <result column = "cinema_name" property = "cinemaName"/>
+            <result column = "release_time" property = "releaseTime"/>
+            <result column = "cinema_price" property = "cinemaPrice"/>
+            <result column = "movie_time" property = "movieTime"/>
+            <result column = "cinema_state" property = "cinemaState"/>
+            <result column = "cinema_seats" property = "cinemaSeats"/>
+        </association>
+
+        <!--
+            4. 使用 <collection> 集合，来映射“一对多”的订单详情列表！
+            property="orderInfos": 对应Order类里的'orderInfos'列表属性
+            ofType="com.seiryo.pojo.OrderInfo": 指明这个列表里装的是OrderInfo类型的对象
+        -->
+        <collection property = "orderInfos" ofType = "com.seiryo.pojo.OrderInfo">
+            <id column = "order_info_id" property = "orderInfoId"/>
+            <result column = "position" property = "position"/>
+            <result column = "order_state" property = "orderState"/>
+            <result column = "order_date" property = "orderDate"/>
+        </collection>
+    </resultMap>
+
+
+    <!--     通过电影编号查找座位信息 -->
+    <select id = "selectSoldSeatsByCinemaId" resultType = "String" parameterType = "Long">
+        SELECT Moi.Position
+        FROM My_Order AS Mo
+                 JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid
+        WHERE Mo.Cinemaid = #{cinemaId};
+    </select>
+
+    <!--     添加新订单 -->
+    <insert id = "insertNewOrder" parameterType = "com.seiryo.pojo.Order">
+        INSERT INTO My_Order(Cinemaid, Userid, Totalprice)
+        VALUES (#{cinema.cinemaId}, #{user.userid}, #{totalPrice});
+    </insert>
+
+    <!-- 返回新订单编号 -->
+    <select id = "selectNewOrderId" resultType = "Long" parameterType = "com.seiryo.pojo.Order">
+        SELECT Orderid
+        FROM My_Order
+        WHERE Orderid = #{orederId};
+    </select>
+
+    <!-- 查询所有订单 -->
+    <select id = "selectAllOrders" resultMap = "OrderWithDetailsResultMap">
+        SELECT -- 订单信息
+               Mo.Orderid      AS Order_Id,
+               Mo.Totalprice   AS Total_Price,
+               -- 用户和用户详情信息
+               Mu.Userid       AS User_Id,
+               Mu.Username     AS User_Name,
+               Mu.Userpass     AS User_Pass,
+               Mui.Usermoney   AS User_Money,
+               Mui.Userpoint   AS User_Point,
+               Mui.Uservip     AS User_Vip,
+               Mui.Userphone   AS User_Phone,
+               Mui.Userstate   AS User_State,
+               -- 电影信息
+               Ci.Cinemaid     AS Cinema_Id,
+               Ci.Cinemaname   AS Cinema_Name,
+               Ci.Releasetime  AS Release_Time,
+               Ci.Cinemaprice  AS Cinema_Price,
+               Ci.Movietime    AS Movie_Time,
+               Ci.Cinemastate  AS Cinema_State,
+               Ci.Cinemaseats  AS Cinema_Seats,
+               -- 订单详情信息
+               Moi.Orderinfoid AS Order_Info_Id,
+               Moi.Position    AS Position,
+               Moi.Orderstate  AS Order_State,
+               Moi.Orderdate   AS Order_Date
+        FROM My_Order AS Mo
+                 JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid
+                 JOIN My_User Mu ON Mo.Userid = Mu.Userid
+                 JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid
+                 LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid
+        WHERE Moi.Orderstate IN ('未观看', '已观看');
+    </select>
+
+    <!-- 删除订单 -->
+    <update id = "deleteOrder" parameterType = "com.seiryo.pojo.OrderInfo">
+        UPDATE My_Order_Info
+        SET Orderstate = #{orderState}
+        WHERE Orderid = #{orderId};
+    </update>
+
+    <!-- 根据用户名查询订单 -->
+    <select id = "selectOrdersByUsername" parameterType = "String" resultMap = "OrderWithDetailsResultMap">
+        SELECT Mo.Orderid,
+               Mo.Totalprice,
+               Mo.Cinemaid,
+               Mo.Userid,
+               Mu.Username,
+               Mui.Uservip,
+               Ci.Cinemaname,
+               Ci.Movietime,
+               Moi.Position,
+               Moi.Orderstate
+        FROM My_Order Mo
+                 JOIN My_User Mu ON Mo.Userid = Mu.Userid
+                 JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid
+                 JOIN Cinema_Info Ci ON Mo.Cinemaid = Ci.Cinemaid
+                 JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid
+        WHERE Mu.Username = #{username};
+    </select>
+
+    <!-- 修改订单状态 -->
+    <update id = "updateOrderStateByAdmin" parameterType = "Map">
+        UPDATE My_Order_Info
+        SET Orderstate = #{newState}
+        WHERE Orderid = #{orderId};
+    </update>
+
+    <!-- 删除订单 -->
+    <delete id = "deleteOrderById" parameterType = "int">
+        DELETE
+        FROM My_Order
+        WHERE Orderid = #{orderId};
+    </delete>
+</mapper>
