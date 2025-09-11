@@ -35,7 +35,7 @@ public class CinemaView {
 	 */
 	public void cinemaView(User user) {
 		// 播放背景音乐
-		BGMPlayer.playBGM("林俊杰+-+爱不会绝迹.wav");
+		BGMPlayer.playBGM("JJ.wav");
 		boolean flag = true;
 		while (flag) {
 			System.out.println("========== 欢迎进入neko影城 ==========");
