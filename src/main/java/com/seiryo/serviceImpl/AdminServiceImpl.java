@@ -94,7 +94,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 增加电影
 	 */
 	public void insertMovie(Admin admin) {
-		System.out.println("========== 增加电影 ==========");
 		cinemaService.addCinema(admin);
 	}
 	
@@ -103,7 +102,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 删除电影
 	 */
 	public void deleteMovie(Admin admin) {
-		System.out.println("========== 删除电影 ==========");
 		cinemaService.deleteCinema(admin);
 	}
 	
@@ -112,7 +110,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 修改电影
 	 */
 	public void updateMovie(Admin admin) {
-		System.out.println("========== 修改电影 ==========");
 		cinemaService.updateCinema(admin);
 	}
 	
@@ -121,7 +118,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 查询电影
 	 */
 	public void queryMovie(Admin admin) {
-		System.out.println("========== 查询电影 ==========");
 		cinemaService.queryCinema(admin);
 	}
 	
@@ -130,7 +126,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 增加VIP等级
 	 */
 	public void insertVip(Admin admin) {
-		System.out.println("========== 增加VIP等级 ==========");
 		vipService.addVip(admin);
 	}
 	
@@ -139,7 +134,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 删除VIP等级
 	 */
 	public void deleteVip(Admin admin) {
-		System.out.println("========== 删除VIP等级 ==========");
 		vipService.deleteVip(admin);
 	}
 	
@@ -148,7 +142,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 修改VIP等级
 	 */
 	public void updateVip(Admin admin) {
-		System.out.println("========== 修改VIP等级 ==========");
 		vipService.updateVip(admin);
 	}
 	
@@ -157,7 +150,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 查询VIP等级
 	 */
 	public void queryVip(Admin admin) {
-		System.out.println("========== 查询VIP等级 ==========");
 		vipService.queryVip(admin);
 	}
 	
@@ -166,7 +158,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 修改订单
 	 */
 	public void updateOrder(Admin admin) {
-		System.out.println("========== 修改订单 ==========");
 		orderService.updateOrder(admin);
 	}
 	
@@ -175,7 +166,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 删除订单
 	 */
 	public void deleteOrder(Admin admin) {
-		System.out.println("========== 删除订单 ==========");
 		orderService.deleteOrder(admin);
 	}
 	
@@ -184,7 +174,6 @@ public class AdminServiceImpl implements AdminService {
 	 * @Description: 查询订单
 	 */
 	public void queryOrder(Admin admin) {
-		System.out.println("========== 查询订单 ==========");
 		orderService.queryOrder(admin);
 	}
 }

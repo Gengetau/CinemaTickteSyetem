@@ -2,6 +2,7 @@ package com.seiryo.mapper;
 
 import com.seiryo.pojo.Order;
 import com.seiryo.pojo.OrderInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -59,13 +60,6 @@ public interface OrderMapper {
 	 * @MethodName: updateOrderStateByAdmin
 	 * @Description: 修改订单状态
 	 */
-	int updateOrderStateByAdmin(int orderId, String newState);
-	
-	/**
-	 * @param orderId 订单ID
-	 * @return 返回影响行数
-	 * @MethodName: deleteOrderById
-	 * @Description: 删除订单
-	 */
-	int deleteOrderById(int orderId);
+	// 添加注解
+	int updateOrderStateByAdmin(@Param("orderId") int orderId, @Param("newState") String newState);
 }

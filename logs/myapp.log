@@ -869,3 +869,317 @@
 2025-09-11 20:56:07.919 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - ==>  Preparing: UPDATE My_User_Info SET Usermoney = ?, Userpoint = ? WHERE Userid = ?;
 2025-09-11 20:56:07.919 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - ==> Parameters: 200(BigDecimal), 0(Long), 10004(Long)
 2025-09-11 20:56:07.921 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - <==    Updates: 1
+2025-09-11 21:11:05.224 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:11:05.240 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin001#(String)
+2025-09-11 21:11:05.249 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:11:24.210 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:11:24.210 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin002!(String)
+2025-09-11 21:11:24.210 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:11:40.401 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:11:40.401 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003$(String)
+2025-09-11 21:11:40.404 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:11:56.915 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:11:56.915 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 21:11:56.917 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:12:39.569 [main] DEBUG c.s.m.U.selectUserByUsername - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM Cinemats.My_User AS Mu JOIN Cinemats.My_User_Info AS Mui ON Mu.Userid = Mui.Userid WHERE Mu.Username = ?;
+2025-09-11 21:12:39.569 [main] DEBUG c.s.m.U.selectUserByUsername - ==> Parameters: superNeko1@(String)
+2025-09-11 21:12:39.570 [main] DEBUG c.s.m.U.selectUserByUsername - <==      Total: 0
+2025-09-11 21:12:39.614 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==>  Preparing: INSERT INTO My_User (Username, Userpass) VALUES (?, ?);
+2025-09-11 21:12:39.615 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==> Parameters: superNeko1@(String), 123344(String)
+2025-09-11 21:12:39.615 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - <==    Updates: 1
+2025-09-11 21:12:39.617 [main] DEBUG c.s.m.UserMapper.insertNewUserInfo - ==>  Preparing: INSERT INTO My_User_Info(Userid, Usermoney, Userpoint, Uservip, Userphone, Userstate) VALUES (?, ?, ?, ?, ?, ?);
+2025-09-11 21:12:39.617 [main] DEBUG c.s.m.UserMapper.insertNewUserInfo - ==> Parameters: 10005(Long), 0.0(BigDecimal), 0(Long), 无(String), null, 正常(String)
+2025-09-11 21:12:39.618 [main] DEBUG c.s.m.UserMapper.insertNewUserInfo - <==    Updates: 1
+2025-09-11 21:12:39.651 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:12:39.654 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 增加新用户superNeko1@成功(String), 2025-09-11 21:12:39.648(Timestamp), Admin003%(String)
+2025-09-11 21:12:39.654 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:12:56.754 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 21:12:56.756 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 21:12:56.757 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 5
+2025-09-11 21:13:11.654 [main] DEBUG c.s.m.UserMapper.updateUserState - ==>  Preparing: UPDATE My_User_Info SET Userstate = ? WHERE Userid = ?;
+2025-09-11 21:13:11.654 [main] DEBUG c.s.m.UserMapper.updateUserState - ==> Parameters: 注销(String), 10005(Long)
+2025-09-11 21:13:11.656 [main] DEBUG c.s.m.UserMapper.updateUserState - <==    Updates: 1
+2025-09-11 21:13:11.694 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:13:11.694 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 删除用户superNeko1@成功(String), 2025-09-11 21:13:11.69(Timestamp), Admin003%(String)
+2025-09-11 21:13:11.695 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:13:17.117 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 21:13:17.117 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 21:13:17.119 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 5
+2025-09-11 21:13:46.724 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:13:46.725 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 修改用户Gengetsu1!密码(String), 2025-09-11 21:13:46.721(Timestamp), Admin003%(String)
+2025-09-11 21:13:46.725 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:13:46.727 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - ==>  Preparing: UPDATE My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid SET Mu.Userpass = ?, Mui.Usermoney = ?, Mui.Userpoint = ?, Mui.Userphone = ?, Mui.Userstate = ? WHERE Mu.Userid = ?;
+2025-09-11 21:13:46.727 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - ==> Parameters: 123456(String), 200.00(BigDecimal), 0(Long), 19100169862(String), 正常(String), 10004(Long)
+2025-09-11 21:13:46.729 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - <==    Updates: 2
+2025-09-11 21:13:53.530 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 21:13:53.530 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 21:13:53.532 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 5
+2025-09-11 21:14:01.837 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:14:01.837 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 修改用户Gengetsu1!余额为500(String), 2025-09-11 21:14:01.834(Timestamp), Admin003%(String)
+2025-09-11 21:14:01.839 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:14:01.842 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - ==>  Preparing: UPDATE My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid SET Mu.Userpass = ?, Mui.Usermoney = ?, Mui.Userpoint = ?, Mui.Userphone = ?, Mui.Userstate = ? WHERE Mu.Userid = ?;
+2025-09-11 21:14:01.843 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - ==> Parameters: 123456(String), 500(BigDecimal), 0(Long), 19100169862(String), 正常(String), 10004(Long)
+2025-09-11 21:14:01.843 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - <==    Updates: 2
+2025-09-11 21:14:06.258 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 21:14:06.258 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 21:14:06.260 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 5
+2025-09-11 21:14:27.206 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:14:27.206 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 修改用户Gengetsu1!手机号为13100982345(String), 2025-09-11 21:14:27.203(Timestamp), Admin003%(String)
+2025-09-11 21:14:27.208 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:14:27.211 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - ==>  Preparing: UPDATE My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid SET Mu.Userpass = ?, Mui.Usermoney = ?, Mui.Userpoint = ?, Mui.Userphone = ?, Mui.Userstate = ? WHERE Mu.Userid = ?;
+2025-09-11 21:14:27.211 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - ==> Parameters: 123456(String), 500.00(BigDecimal), 0(Long), 13100982345(String), 正常(String), 10004(Long)
+2025-09-11 21:14:27.212 [main] DEBUG c.s.m.UserMapper.updateUserByAdmin - <==    Updates: 2
+2025-09-11 21:14:34.367 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 21:14:34.367 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 21:14:34.369 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 5
+2025-09-11 21:14:34.411 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:14:34.411 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询所有用户信息(String), 2025-09-11 21:14:34.407(Timestamp), Admin003%(String)
+2025-09-11 21:14:34.413 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:18:17.397 [main] DEBUG c.s.m.CinemaMapper.insertNewCinema - ==>  Preparing: INSERT INTO Cinema_Info(Cinemaname, Releasetime, Cinemaprice, Movietime, Cinemastate, Cinemaseats) VALUES (?, ?, ?, ?, ?, ?);
+2025-09-11 21:18:17.398 [main] DEBUG c.s.m.CinemaMapper.insertNewCinema - ==> Parameters: 环太平洋3(String), 2025-10-22 00:00:00.0(Timestamp), 39.9(BigDecimal), 2025-10-22 08:30:00.0(Timestamp), 上架(String), 20(Integer)
+2025-09-11 21:18:17.400 [main] DEBUG c.s.m.CinemaMapper.insertNewCinema - <==    Updates: 1
+2025-09-11 21:18:17.430 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:18:17.431 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 新电影环太平洋3添加成功(String), 2025-09-11 21:18:17.428(Timestamp), Admin003%(String)
+2025-09-11 21:18:17.432 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:18:22.658 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 21:18:22.658 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 21:18:22.659 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 3
+2025-09-11 21:18:32.316 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 21:18:32.317 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 104(Long)
+2025-09-11 21:18:32.317 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 21:18:32.318 [main] DEBUG c.s.mapper.CinemaMapper.deleteCinema - ==>  Preparing: DELETE FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 21:18:32.318 [main] DEBUG c.s.mapper.CinemaMapper.deleteCinema - ==> Parameters: 104(Long)
+2025-09-11 21:18:32.318 [main] DEBUG c.s.mapper.CinemaMapper.deleteCinema - <==    Updates: 1
+2025-09-11 21:18:32.352 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:18:32.352 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 电影环太平洋3删除成功(String), 2025-09-11 21:18:32.349(Timestamp), Admin003%(String)
+2025-09-11 21:18:32.354 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:18:38.360 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 21:18:38.360 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 21:18:38.360 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 21:18:41.319 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 21:18:41.319 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 101(Long)
+2025-09-11 21:18:41.320 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 21:18:55.295 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:18:55.295 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 编号101的电影票价被修改为49.9(String), 2025-09-11 21:18:55.257(Timestamp), Admin003%(String)
+2025-09-11 21:18:55.296 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:18:55.331 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:18:55.331 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 编号101的电影状态被修改为上架(String), 2025-09-11 21:18:55.327(Timestamp), Admin003%(String)
+2025-09-11 21:18:55.333 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:18:55.335 [main] DEBUG c.s.mapper.CinemaMapper.updateCinema - ==>  Preparing: UPDATE Cinema_Info SET Cinemaname = ?, Releasetime = ?, Cinemaprice = ?, Movietime = ?, Cinemastate = ?, Cinemaseats = ? WHERE Cinemaid = ?;
+2025-09-11 21:18:55.335 [main] DEBUG c.s.mapper.CinemaMapper.updateCinema - ==> Parameters: Neko的奇幻冒险(String), 2025-09-09 00:00:00.0(Timestamp), 49.9(BigDecimal), 2025-09-12 14:30:00.0(Timestamp), 上架(String), 20(Integer), 101(Long)
+2025-09-11 21:18:55.336 [main] DEBUG c.s.mapper.CinemaMapper.updateCinema - <==    Updates: 1
+2025-09-11 21:19:02.059 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 21:19:02.059 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 21:19:02.060 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 21:19:05.502 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 21:19:05.502 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 102(Long)
+2025-09-11 21:19:05.503 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 21:19:23.138 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:19:23.138 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 编号102的电影名称被修改为薛定谔的猫(String), 2025-09-11 21:19:23.135(Timestamp), Admin003%(String)
+2025-09-11 21:19:23.138 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:19:23.167 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:19:23.167 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 编号102的电影状态被修改为下架(String), 2025-09-11 21:19:23.164(Timestamp), Admin003%(String)
+2025-09-11 21:19:23.168 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:19:23.171 [main] DEBUG c.s.mapper.CinemaMapper.updateCinema - ==>  Preparing: UPDATE Cinema_Info SET Cinemaname = ?, Releasetime = ?, Cinemaprice = ?, Movietime = ?, Cinemastate = ?, Cinemaseats = ? WHERE Cinemaid = ?;
+2025-09-11 21:19:23.171 [main] DEBUG c.s.mapper.CinemaMapper.updateCinema - ==> Parameters: 薛定谔的猫(String), 2025-09-15 00:00:00.0(Timestamp), 65.50(BigDecimal), 2025-09-16 19:00:00.0(Timestamp), 下架(String), 20(Integer), 102(Long)
+2025-09-11 21:19:23.172 [main] DEBUG c.s.mapper.CinemaMapper.updateCinema - <==    Updates: 1
+2025-09-11 21:19:44.725 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 21:19:44.726 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 102(Long)
+2025-09-11 21:19:44.727 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 21:19:44.751 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:19:44.751 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询编号为102的电影(String), 2025-09-11 21:19:44.748(Timestamp), Admin003%(String)
+2025-09-11 21:19:44.751 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:19:55.267 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 21:19:55.267 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: 猫(String)
+2025-09-11 21:19:55.269 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 1
+2025-09-11 21:19:55.297 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:19:55.298 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询名称为猫的电影(String), 2025-09-11 21:19:55.294(Timestamp), Admin003%(String)
+2025-09-11 21:19:55.298 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:20:30.464 [main] DEBUG c.s.mapper.VipMapper.insertNewVip - ==>  Preparing: INSERT INTO Vip_Info(Vippoint, Vipname, Vipdiscount) VALUES (?, ?, ?);
+2025-09-11 21:20:30.464 [main] DEBUG c.s.mapper.VipMapper.insertNewVip - ==> Parameters: 5000(Integer), 超级VIP(String), 0.88(Double)
+2025-09-11 21:27:50.845 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:27:50.864 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 21:27:50.872 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:28:06.602 [main] DEBUG c.s.mapper.VipMapper.insertNewVip - ==>  Preparing: INSERT INTO Vip_Info(Vippoint, Vipname, Vipdiscount) VALUES (?, ?, ?);
+2025-09-11 21:28:06.604 [main] DEBUG c.s.mapper.VipMapper.insertNewVip - ==> Parameters: 5000(Integer), 超级VIP(String), 0.88(Double)
+2025-09-11 21:28:06.605 [main] DEBUG c.s.mapper.VipMapper.insertNewVip - <==    Updates: 1
+2025-09-11 21:28:06.648 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:28:06.650 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 添加VIP等级超级VIP成功(String), 2025-09-11 21:28:06.646(Timestamp), Admin003%(String)
+2025-09-11 21:28:06.651 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:30:34.655 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==>  Preparing: SELECT * FROM Vip_Info;
+2025-09-11 21:30:34.655 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==> Parameters: 
+2025-09-11 21:30:34.657 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - <==      Total: 6
+2025-09-11 21:30:39.140 [main] DEBUG c.seiryo.mapper.VipMapper.deleteVip - ==>  Preparing: DELETE FROM Vip_Info WHERE Vipid = ?;
+2025-09-11 21:30:39.140 [main] DEBUG c.seiryo.mapper.VipMapper.deleteVip - ==> Parameters: 6(Integer)
+2025-09-11 21:30:39.141 [main] DEBUG c.seiryo.mapper.VipMapper.deleteVip - <==    Updates: 1
+2025-09-11 21:30:39.181 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:30:39.181 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 删除id为6的VIP等级成功(String), 2025-09-11 21:30:39.178(Timestamp), Admin003%(String)
+2025-09-11 21:30:39.181 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:30:42.370 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==>  Preparing: SELECT * FROM Vip_Info;
+2025-09-11 21:30:42.371 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==> Parameters: 
+2025-09-11 21:30:42.373 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - <==      Total: 5
+2025-09-11 21:30:46.926 [main] DEBUG c.s.mapper.VipMapper.selectVipById - ==>  Preparing: SELECT * FROM Vip_Info WHERE Vipid = ?;
+2025-09-11 21:30:46.926 [main] DEBUG c.s.mapper.VipMapper.selectVipById - ==> Parameters: 5(Integer)
+2025-09-11 21:30:46.927 [main] DEBUG c.s.mapper.VipMapper.selectVipById - <==      Total: 1
+2025-09-11 21:30:57.118 [main] DEBUG c.seiryo.mapper.VipMapper.updateVip - ==>  Preparing: UPDATE Vip_Info SET Vippoint = ?, Vipname = ?, Vipdiscount = ? WHERE Vipid = ?;
+2025-09-11 21:30:57.118 [main] DEBUG c.seiryo.mapper.VipMapper.updateVip - ==> Parameters: 3000(Integer), 黑钻VIP(String), 0.9(Double), 5(Integer)
+2025-09-11 21:30:57.119 [main] DEBUG c.seiryo.mapper.VipMapper.updateVip - <==    Updates: 1
+2025-09-11 21:30:57.159 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:30:57.159 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 修改id为5的VIP等级信息成功(String), 2025-09-11 21:30:57.156(Timestamp), Admin003%(String)
+2025-09-11 21:30:57.160 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:31:00.513 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==>  Preparing: SELECT * FROM Vip_Info;
+2025-09-11 21:31:00.513 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==> Parameters: 
+2025-09-11 21:31:00.517 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - <==      Total: 5
+2025-09-11 21:31:05.106 [main] DEBUG c.s.mapper.VipMapper.selectVipById - ==>  Preparing: SELECT * FROM Vip_Info WHERE Vipid = ?;
+2025-09-11 21:31:05.108 [main] DEBUG c.s.mapper.VipMapper.selectVipById - ==> Parameters: 1(Integer)
+2025-09-11 21:31:05.108 [main] DEBUG c.s.mapper.VipMapper.selectVipById - <==      Total: 1
+2025-09-11 21:31:23.860 [main] DEBUG c.seiryo.mapper.VipMapper.updateVip - ==>  Preparing: UPDATE Vip_Info SET Vippoint = ?, Vipname = ?, Vipdiscount = ? WHERE Vipid = ?;
+2025-09-11 21:31:23.860 [main] DEBUG c.seiryo.mapper.VipMapper.updateVip - ==> Parameters: 0(Integer), 青铜VIP(String), 1.0(Double), 1(Integer)
+2025-09-11 21:31:23.861 [main] DEBUG c.seiryo.mapper.VipMapper.updateVip - <==    Updates: 1
+2025-09-11 21:31:23.893 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:31:23.893 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 修改id为1的VIP等级信息成功(String), 2025-09-11 21:31:23.889(Timestamp), Admin003%(String)
+2025-09-11 21:31:23.894 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:31:30.865 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==>  Preparing: SELECT * FROM Vip_Info;
+2025-09-11 21:31:30.865 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - ==> Parameters: 
+2025-09-11 21:31:30.867 [main] DEBUG c.s.mapper.VipMapper.selectAllVips - <==      Total: 5
+2025-09-11 21:31:30.901 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:31:30.902 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询所有VIP等级信息(String), 2025-09-11 21:31:30.898(Timestamp), Admin003%(String)
+2025-09-11 21:31:30.902 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:31:44.399 [main] DEBUG c.s.mapper.VipMapper.selectVipById - ==>  Preparing: SELECT * FROM Vip_Info WHERE Vipid = ?;
+2025-09-11 21:31:44.399 [main] DEBUG c.s.mapper.VipMapper.selectVipById - ==> Parameters: 1(Integer)
+2025-09-11 21:31:44.401 [main] DEBUG c.s.mapper.VipMapper.selectVipById - <==      Total: 1
+2025-09-11 21:31:44.429 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:31:44.429 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询ID为 1 的VIP等级信息(String), 2025-09-11 21:31:44.426(Timestamp), Admin003%(String)
+2025-09-11 21:31:44.431 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:32:02.369 [main] DEBUG c.s.m.O.selectOrdersByUsername - ==>  Preparing: SELECT Mo.Orderid, Mo.Totalprice, Mo.Cinemaid, Mo.Userid, Mu.Username, Mui.Uservip, Ci.Cinemaname, Ci.Movietime, Moi.Position, Moi.Orderstate FROM My_Order Mo JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid JOIN Cinema_Info Ci ON Mo.Cinemaid = Ci.Cinemaid JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mu.Username = ?;
+2025-09-11 21:32:02.371 [main] DEBUG c.s.m.O.selectOrdersByUsername - ==> Parameters: Master(String)
+2025-09-11 21:32:02.375 [main] DEBUG c.s.m.O.selectOrdersByUsername - <==      Total: 0
+2025-09-11 21:32:02.402 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:32:02.402 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询用户名为Master的订单信息(String), 2025-09-11 21:32:02.4(Timestamp), Admin003%(String)
+2025-09-11 21:32:02.403 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:32:15.885 [main] DEBUG c.s.m.O.selectOrdersByUsername - ==>  Preparing: SELECT Mo.Orderid, Mo.Totalprice, Mo.Cinemaid, Mo.Userid, Mu.Username, Mui.Uservip, Ci.Cinemaname, Ci.Movietime, Moi.Position, Moi.Orderstate FROM My_Order Mo JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid JOIN Cinema_Info Ci ON Mo.Cinemaid = Ci.Cinemaid JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mu.Username = ?;
+2025-09-11 21:32:15.885 [main] DEBUG c.s.m.O.selectOrdersByUsername - ==> Parameters: Master01@(String)
+2025-09-11 21:32:15.891 [main] DEBUG c.s.m.O.selectOrdersByUsername - <==      Total: 6
+2025-09-11 21:32:15.924 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:32:15.925 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询用户名为Master01@的订单信息(String), 2025-09-11 21:32:15.921(Timestamp), Admin003%(String)
+2025-09-11 21:32:15.926 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:40:15.765 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:40:15.782 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 21:40:15.792 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:40:29.981 [main] DEBUG c.s.m.O.selectOrdersByUsername - ==>  Preparing: SELECT Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order Mo JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid JOIN Cinema_Info Ci ON Mo.Cinemaid = Ci.Cinemaid JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mu.Username = ?;
+2025-09-11 21:40:29.981 [main] DEBUG c.s.m.O.selectOrdersByUsername - ==> Parameters: Master01@(String)
+2025-09-11 21:40:29.986 [main] DEBUG c.s.m.O.selectOrdersByUsername - <==      Total: 6
+2025-09-11 21:40:30.028 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:40:30.030 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 查询用户名为Master01@的订单信息(String), 2025-09-11 21:40:30.025(Timestamp), Admin003%(String)
+2025-09-11 21:40:30.030 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:43:47.110 [main] DEBUG c.s.m.O.updateOrderStateByAdmin - ==>  Preparing: UPDATE My_Order_Info SET Orderstate = ? WHERE Orderid = ?;
+2025-09-11 21:50:54.426 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:50:54.444 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 21:50:54.453 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:50:59.333 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 21:50:59.334 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 21:50:59.342 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 4
+2025-09-11 21:51:57.737 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 21:51:57.752 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 21:51:57.762 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 21:52:00.299 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 21:52:00.300 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 21:52:00.307 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 4
+2025-09-11 21:52:10.141 [main] DEBUG c.s.m.O.updateOrderStateByAdmin - ==>  Preparing: UPDATE My_Order_Info SET Orderstate = ? WHERE Orderid = ?;
+2025-09-11 21:52:10.141 [main] DEBUG c.s.m.O.updateOrderStateByAdmin - ==> Parameters: 已取消(String), 2(Integer)
+2025-09-11 21:52:10.142 [main] DEBUG c.s.m.O.updateOrderStateByAdmin - <==    Updates: 1
+2025-09-11 21:52:10.179 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 21:52:10.181 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 修改订单ID为2的订单状态成功(String), 2025-09-11 21:52:10.176(Timestamp), Admin003%(String)
+2025-09-11 21:52:10.182 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 21:52:42.712 [main] DEBUG c.s.m.OrderMapper.deleteOrderById - ==>  Preparing: DELETE FROM My_Order WHERE Orderid = ?;
+2025-09-11 21:52:42.712 [main] DEBUG c.s.m.OrderMapper.deleteOrderById - ==> Parameters: 2(Integer)
+2025-09-11 22:17:18.551 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:17:18.567 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:17:18.577 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:17:28.825 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 22:17:28.825 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 22:17:28.832 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 3
+2025-09-11 22:17:35.548 [main] DEBUG c.s.mapper.OrderMapper.deleteOrder - ==>  Preparing: UPDATE My_Order_Info SET Orderstate = ? WHERE Orderinfoid = ?;
+2025-09-11 22:17:35.549 [main] DEBUG c.s.mapper.OrderMapper.deleteOrder - ==> Parameters: 订单已取消(String), 4(Long)
+2025-09-11 22:17:35.549 [main] DEBUG c.s.mapper.OrderMapper.deleteOrder - <==    Updates: 1
+2025-09-11 22:17:35.586 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:17:35.588 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 删除订单详情ID为4的订单详情成功(String), 2025-09-11 22:17:35.583(Timestamp), Admin003%(String)
+2025-09-11 22:17:35.589 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:17:35.625 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - ==>  Preparing: UPDATE My_User_Info SET Usermoney = ?, Userpoint = ? WHERE Userid = ?;
+2025-09-11 22:17:35.625 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - ==> Parameters: 9738.05(BigDecimal), 10261(Long), 10001(Long)
+2025-09-11 22:17:35.627 [main] DEBUG c.s.m.U.updateUserMoneyAndPoints - <==    Updates: 1
+2025-09-11 22:17:35.671 [main] DEBUG c.s.m.V.selectVipNameByPoints1 - ==>  Preparing: SELECT Vipname FROM Vip_Info WHERE Vippoint <= ? -- 所有小于等于当前积分的等级 ORDER BY Vippoint DESC LIMIT 1;-- 取第一个
+2025-09-11 22:17:35.672 [main] DEBUG c.s.m.V.selectVipNameByPoints1 - ==> Parameters: 10261(Long)
+2025-09-11 22:17:35.674 [main] DEBUG c.s.m.V.selectVipNameByPoints1 - <==      Total: 1
+2025-09-11 22:17:35.674 [main] DEBUG c.s.m.V.selectVipNameByPoints2 - ==>  Preparing: SELECT Vippoint FROM Vip_Info WHERE Vippoint >= ? -- 所有大于当前积分的等级 ORDER BY Vippoint-- 正序排列 LIMIT 1;-- 取第一个
+2025-09-11 22:17:35.674 [main] DEBUG c.s.m.V.selectVipNameByPoints2 - ==> Parameters: 10261(Long)
+2025-09-11 22:17:35.674 [main] DEBUG c.s.m.V.selectVipNameByPoints2 - <==      Total: 0
+2025-09-11 22:18:38.333 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:18:38.334 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:18:38.337 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 28
+2025-09-11 22:18:38.370 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:18:38.370 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:18:38.366(Timestamp), Admin003%(String)
+2025-09-11 22:18:38.371 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:23:10.919 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:23:10.935 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:23:10.945 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:23:15.751 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:23:15.751 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:23:15.755 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 29
+2025-09-11 22:23:15.803 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:23:15.804 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:23:15.8(Timestamp), Admin003%(String)
+2025-09-11 22:23:15.804 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:24:18.652 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:24:18.669 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:24:18.677 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:24:21.635 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:24:21.635 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:24:21.638 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 30
+2025-09-11 22:24:21.684 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:24:21.686 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:24:21.681(Timestamp), Admin003%(String)
+2025-09-11 22:24:21.687 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:25:14.149 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:25:14.165 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:25:14.174 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:25:17.869 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:25:17.869 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:25:17.873 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 31
+2025-09-11 22:25:17.919 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:25:17.920 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:25:17.916(Timestamp), Admin003%(String)
+2025-09-11 22:25:17.921 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:25:52.072 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:25:52.090 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:25:52.102 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:25:54.974 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:25:54.974 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:25:54.978 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 32
+2025-09-11 22:25:55.022 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:25:55.023 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:25:55.019(Timestamp), Admin003%(String)
+2025-09-11 22:25:55.024 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:26:33.253 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:26:33.269 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:26:33.278 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:26:36.138 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:26:36.138 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:26:36.142 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 33
+2025-09-11 22:26:36.189 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:26:36.190 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:26:36.186(Timestamp), Admin003%(String)
+2025-09-11 22:26:36.191 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:29:41.609 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:29:41.626 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:29:41.637 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:29:45.248 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:29:45.248 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:29:45.252 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 34
+2025-09-11 22:29:45.301 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:29:45.302 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:29:45.298(Timestamp), Admin003%(String)
+2025-09-11 22:29:45.303 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1
+2025-09-11 22:30:18.783 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==>  Preparing: SELECT * FROM Admin_Info WHERE adminName = ?;
+2025-09-11 22:30:18.800 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - ==> Parameters: Admin003%(String)
+2025-09-11 22:30:18.811 [main] DEBUG c.s.m.AdminMapper.selectAllAdmins - <==      Total: 1
+2025-09-11 22:30:21.260 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==>  Preparing: SELECT * FROM Log_Info;
+2025-09-11 22:30:21.260 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - ==> Parameters: 
+2025-09-11 22:30:21.263 [main] DEBUG c.s.mapper.LogMapper.selectAllLog - <==      Total: 35
+2025-09-11 22:30:21.317 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==>  Preparing: INSERT INTO Log_Info(Loginfo, Logdate, Logname) VALUES (?, ?, ?);
+2025-09-11 22:30:21.318 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - ==> Parameters: 日志查询(String), 2025-09-11 22:30:21.314(Timestamp), Admin003%(String)
+2025-09-11 22:30:21.319 [main] DEBUG c.seiryo.mapper.LogMapper.insertLog - <==    Updates: 1

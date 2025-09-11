@@ -48,6 +48,7 @@ public class MainTest {
 		adminService.setOrderService(orderService);
 		cinemaService.setLogService(logService);
 		orderService.setLogService(logService);
+		orderService.setUserService(userService);
 		vipService.setLogService(logService);
 		userService.setLogService(logService);
 		

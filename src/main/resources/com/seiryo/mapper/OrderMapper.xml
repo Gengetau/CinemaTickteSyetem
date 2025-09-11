@@ -119,16 +119,27 @@
 
     <!-- 根据用户名查询订单 -->
     <select id = "selectOrdersByUsername" parameterType = "String" resultMap = "OrderWithDetailsResultMap">
-        SELECT Mo.Orderid,
-               Mo.Totalprice,
-               Mo.Cinemaid,
-               Mo.Userid,
-               Mu.Username,
-               Mui.Uservip,
-               Ci.Cinemaname,
-               Ci.Movietime,
-               Moi.Position,
-               Moi.Orderstate
+        SELECT Mo.Orderid      AS Order_Id,
+               Mo.Totalprice   AS Total_Price,
+               Mu.Userid       AS User_Id,
+               Mu.Username     AS User_Name,
+               Mu.Userpass     AS User_Pass,
+               Mui.Usermoney   AS User_Money,
+               Mui.Userpoint   AS User_Point,
+               Mui.Uservip     AS User_Vip,
+               Mui.Userphone   AS User_Phone,
+               Mui.Userstate   AS User_State,
+               Ci.Cinemaid     AS Cinema_Id,
+               Ci.Cinemaname   AS Cinema_Name,
+               Ci.Releasetime  AS Release_Time,
+               Ci.Cinemaprice  AS Cinema_Price,
+               Ci.Movietime    AS Movie_Time,
+               Ci.Cinemastate  AS Cinema_State,
+               Ci.Cinemaseats  AS Cinema_Seats,
+               Moi.Orderinfoid AS Order_Info_Id,
+               Moi.Position    AS Position,
+               Moi.Orderstate  AS Order_State,
+               Moi.Orderdate   AS Order_Date
         FROM My_Order Mo
                  JOIN My_User Mu ON Mo.Userid = Mu.Userid
                  JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid
@@ -143,11 +154,4 @@
         SET Orderstate = #{newState}
         WHERE Orderid = #{orderId};
     </update>
-
-    <!-- 删除订单 物理删除  -->
-    <delete id = "deleteOrderById" parameterType = "int">
-        DELETE
-        FROM My_Order
-        WHERE Orderid = #{orderId};
-    </delete>
 </mapper>

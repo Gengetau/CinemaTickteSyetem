@@ -1,5 +1,6 @@
 package com.seiryo.pojo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -60,6 +61,8 @@ public class Log {
 	
 	@Override
 	public String toString() {
-		return logId + logInfo + logDate + logName;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String date = sdf.format(logDate);
+		return String.format("%-5s \t %-80s \t %-25s \t %-10s", logId, logInfo, date, logName);
 	}
 }
