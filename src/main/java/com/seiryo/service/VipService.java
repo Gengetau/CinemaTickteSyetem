@@ -10,6 +10,8 @@ import com.seiryo.pojo.Admin;
  * @dateTime 2025/9/10 21:36
  */
 public interface VipService {
+	// ================== 由管理员发起的对会员的操作 ==================
+	
 	/**
 	 * @MethodName: addVip
 	 * @Description: 增加VIP等级

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="DataSourcePerFileMappings">
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/b24398ec-4abd-44d5-99a4-0f04bf7a995d/console.sql" value="b24398ec-4abd-44d5-99a4-0f04bf7a995d" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/com/seiryo/mapper/AdminMapper.xml" value="b24398ec-4abd-44d5-99a4-0f04bf7a995d" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/seiryo/mapper/CinemaMapper.xml" value="b24398ec-4abd-44d5-99a4-0f04bf7a995d" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/seiryo/mapper/LogMapper.xml" value="b24398ec-4abd-44d5-99a4-0f04bf7a995d" />
     <file url="file://$PROJECT_DIR$/src/main/resources/com/seiryo/mapper/OrderInfoMapper.xml" value="b24398ec-4abd-44d5-99a4-0f04bf7a995d" />

@@ -46,13 +46,14 @@ public class MainTest {
 		adminService.setCinemaService(cinemaService);
 		adminService.setVipService(vipService);
 		adminService.setOrderService(orderService);
-		adminService.setLogService(logService);
 		cinemaService.setLogService(logService);
 		orderService.setLogService(logService);
 		vipService.setLogService(logService);
+		userService.setLogService(logService);
 		
 		// 2.2 向Controller层注入它所需要的Service
 		userCtrl.setUserService(userService);
+		userCtrl.setCinemaService(cinemaService);
 		adminCtrl.setAdminService(adminService);
 		adminCtrl.setLogService(logService);
 		cinemaCtrl.setCinemaService(cinemaService);

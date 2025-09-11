@@ -10,9 +10,10 @@
 <mapper namespace = "com.seiryo.mapper.AdminMapper">
   <!--   查找所有用户 -->
     <!--   resultType:返回参数的类型 -->
-    <select id = "selectAllAdmins" resultType = "com.seiryo.pojo.Admin">
+    <select id = "selectAllAdmins" parameterType = "String" resultType = "com.seiryo.pojo.Admin">
        SELECT *
-       FROM Cinemats.Admin_Info
+       FROM Admin_Info
+       WHERE adminName = #{inputName};
   </select>
 
 </mapper>

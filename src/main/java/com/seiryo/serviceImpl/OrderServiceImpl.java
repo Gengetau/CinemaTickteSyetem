@@ -20,9 +20,6 @@ import java.util.List;
  * @dateTime 2025/9/10 14:43
  */
 public class OrderServiceImpl implements OrderService {
-	// 获取SqlSession对象和Mapper代理对象
-	private final SqlSession sqlSession = MyBatisUtil.getSqlSession();
-	private final OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
 	// 服务对象
 	private LogService logService;
 	
@@ -36,11 +33,17 @@ public class OrderServiceImpl implements OrderService {
 	 * @Description: 添加新订单
 	 */
 	public void addNewOrder(Order order) {
-		int cows = orderMapper.insertNewOrder(order);
-		if (cows != 0) {
-			System.out.println("新订单添加成功！");
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			int cows = orderMapper.insertNewOrder(order);
+			if (cows > 0) {
+				sqlSession.commit();
+				System.out.println("新订单添加成功！");
+			} else {
+				sqlSession.rollback();
+				System.out.println("订单添加失败！");
+			}
 		}
-		System.out.println("订单添加失败！");
 	}
 	
 	/**
@@ -50,7 +53,10 @@ public class OrderServiceImpl implements OrderService {
 	 * @Description: 查询新订单id
 	 */
 	public Long selectNewOrderId(Order order) {
-		return orderMapper.selectNewOrderId(order);
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			return orderMapper.selectNewOrderId(order);
+		}
 	}
 	
 	/**
@@ -59,7 +65,10 @@ public class OrderServiceImpl implements OrderService {
 	 * @Description: 查询所有订单
 	 */
 	public List<Order> selectAllOrders() {
-		return orderMapper.selectAllOrders();
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			return orderMapper.selectAllOrders();
+		}
 	}
 	
 	
@@ -69,11 +78,17 @@ public class OrderServiceImpl implements OrderService {
 	 * @Description: 取消订单
 	 */
 	public void deleteOrderInfo(OrderInfo orderInfo) {
-		int cows = orderMapper.deleteOrder(orderInfo);
-		if (cows != 0) {
-			System.out.println("订单取消成功！");
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			int cows = orderMapper.deleteOrder(orderInfo);
+			if (cows > 0) {
+				sqlSession.commit();
+				System.out.println("订单取消成功！");
+			} else {
+				sqlSession.rollback();
+				System.out.println("订单取消失败！");
+			}
 		}
-		System.out.println("订单取消失败！");
 	}
 	
 	/**
@@ -83,13 +98,16 @@ public class OrderServiceImpl implements OrderService {
 	public void queryOrder(Admin admin) {
 		System.out.println("========== 查询订单 ==========");
 		String username = ScannerUtil.nextLine("请输入要查询的用户名：");
-		List<Order> orders = orderMapper.selectOrdersByUsername(username);
-		logService.insertLog(admin, "查询用户名为" + username + "的订单信息");
-		if (orders.isEmpty()) {
-			System.out.println("该用户没有订单记录！");
-		} else {
-			System.out.println("用户 " + username + " 的订单记录如下：");
-			orders.forEach(System.out::println);
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			List<Order> orders = orderMapper.selectOrdersByUsername(username);
+			logService.insertLog(admin, "查询用户名为" + username + "的订单信息");
+			if (orders.isEmpty()) {
+				System.out.println("该用户没有订单记录！");
+			} else {
+				System.out.println("用户 " + username + " 的订单记录如下：");
+				orders.forEach(System.out::println);
+			}
 		}
 	}
 	
@@ -101,15 +119,18 @@ public class OrderServiceImpl implements OrderService {
 		System.out.println("========== 修改订单 ==========");
 		int orderId = ScannerUtil.getValidIntegerInput("请输入要修改的订单ID：");
 		String newState = ScannerUtil.nextLine("请输入新的订单状态（例如：已观看，已取消）：");
-		int rows = orderMapper.updateOrderStateByAdmin(orderId, newState);
-		if (rows > 0) {
-			sqlSession.commit();
-			System.out.println("订单状态修改成功！");
-			logService.insertLog(admin, "修改订单ID为" + orderId + "的订单状态成功");
-		} else {
-			sqlSession.rollback();
-			System.out.println("订单状态修改失败！");
-			logService.insertLog(admin, "修改订单ID为" + orderId + "的订单状态失败");
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			int rows = orderMapper.updateOrderStateByAdmin(orderId, newState);
+			if (rows > 0) {
+				sqlSession.commit();
+				System.out.println("订单状态修改成功！");
+				logService.insertLog(admin, "修改订单ID为" + orderId + "的订单状态成功");
+			} else {
+				sqlSession.rollback();
+				System.out.println("订单状态修改失败！");
+				logService.insertLog(admin, "修改订单ID为" + orderId + "的订单状态失败");
+			}
 		}
 	}
 	
@@ -120,15 +141,18 @@ public class OrderServiceImpl implements OrderService {
 	public void deleteOrder(Admin admin) {
 		System.out.println("========== 删除订单 ==========");
 		int orderId = ScannerUtil.getValidIntegerInput("请输入要删除的订单ID：");
-		int rows = orderMapper.deleteOrderById(orderId);
-		if (rows > 0) {
-			sqlSession.commit();
-			System.out.println("订单删除成功！");
-			logService.insertLog(admin, "删除订单ID为" + orderId + "的订单成功");
-		} else {
-			sqlSession.rollback();
-			System.out.println("订单删除失败，ID不存在！");
-			logService.insertLog(admin, "删除订单ID为" + orderId + "的订单失败");
+		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
+			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
+			int rows = orderMapper.deleteOrderById(orderId);
+			if (rows > 0) {
+				sqlSession.commit();
+				System.out.println("订单删除成功！");
+				logService.insertLog(admin, "删除订单ID为" + orderId + "的订单成功");
+			} else {
+				sqlSession.rollback();
+				System.out.println("订单删除失败，ID不存在！");
+				logService.insertLog(admin, "删除订单ID为" + orderId + "的订单失败");
+			}
 		}
 	}
 }

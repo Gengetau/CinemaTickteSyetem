@@ -43,6 +43,8 @@ public interface OrderService {
 	 */
 	void deleteOrderInfo(OrderInfo orderInfo);
 	
+	// ================== 由管理员发起的对订单的操作 ==================
+	
 	/**
 	 * @MethodName: queryOrder
 	 * @Description: 查询订单

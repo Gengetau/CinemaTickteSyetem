@@ -54,6 +54,8 @@ public interface CinemaService {
 	 */
 	BigDecimal getCinemaPrice(User user, int count, BigDecimal cinemaPrice);
 	
+	// ================== 由管理员发起的对电影的操作 ==================
+	
 	/**
 	 * @MethodName: addCinema
 	 * @Description: 增加电影

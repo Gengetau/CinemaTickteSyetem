@@ -89,6 +89,7 @@ public class UserCtrl {
 				break;
 			case 3:// 预览
 				preview();
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 4:// 管理员登录
 				Admin loginAdmin = adminCtrl.adminLogin();
@@ -235,6 +236,11 @@ public class UserCtrl {
 		
 		// 3.获取电影列表
 		List<Cinema> cinemas = cinemaService.getAllCinemas();
+		
+		if (cinemas.isEmpty()) {
+			System.out.println("现在影院没有电影");
+			return;
+		}
 		
 		// 4.打印电影列表
 		for (Cinema cinema : cinemas) {

@@ -2,7 +2,6 @@ package com.seiryo.mapper;
 
 import com.seiryo.pojo.Admin;
 
-import java.util.List;
 
 /**
  * @author 11567
@@ -17,5 +16,5 @@ public interface AdminMapper {
 	 * @MethodName: selectAllAdmins
 	 * @Description: 查询所有管理员信息
 	 */
-	List<Admin> selectAllAdmins();
+	Admin selectAllAdmins(String inputName);
 }

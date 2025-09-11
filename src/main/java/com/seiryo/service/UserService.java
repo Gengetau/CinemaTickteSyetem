@@ -1,5 +1,6 @@
 package com.seiryo.service;
 
+import com.seiryo.pojo.Admin;
 import com.seiryo.pojo.User;
 
 /**
@@ -77,10 +78,33 @@ public interface UserService {
 	 */
 	void updateUserPhone(User user);
 	
+	// ================== 由管理员发起的对用户的操作 ==================
+	
 	/**
-	 * @param user 要修改的用户
-	 * @MethodName: updateUserByAdmin
-	 * @Description: 管理员修改用户信息
+	 * @param admin 操作的管理员 (用于日志记录)
+	 * @MethodName: insertUserByAdmin
+	 * @Description: 管理员增加用户
 	 */
-	void updateUserByAdmin(User user);
+	void insertUserByAdmin(Admin admin);
+	
+	/**
+	 * @param admin 操作的管理员 (用于日志记录)
+	 * @MethodName: deleteUserByAdmin
+	 * @Description: 管理员删除用户
+	 */
+	void deleteUserByAdmin(Admin admin);
+	
+	/**
+	 * @param admin 操作的管理员 (用于日志记录)
+	 * @MethodName: updateUserByAdmin
+	 * @Description: 管理员修改用户
+	 */
+	void updateUserByAdmin(Admin admin);
+	
+	/**
+	 * @param admin 操作的管理员 (用于日志记录)
+	 * @MethodName: queryUserByAdmin
+	 * @Description: 管理员查询用户
+	 */
+	void queryUserByAdmin(Admin admin);
 }

@@ -286,3 +286,31 @@
 2025-09-11 15:48:55.816 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
 2025-09-11 15:48:55.816 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
 2025-09-11 15:48:55.821 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 16:02:22.033 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 16:02:22.049 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 16:02:22.057 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 16:02:22.058 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==>  Preparing: INSERT INTO My_User (Username, Userpass) VALUES (?, ?);
+2025-09-11 16:02:22.059 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==> Parameters: Master01@(String), 123456(String)
+2025-09-11 16:05:26.212 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 16:05:26.325 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 16:05:26.405 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 16:07:30.041 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==>  Preparing: INSERT INTO My_User (Username, Userpass) VALUES (?, ?);
+2025-09-11 16:07:30.042 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==> Parameters: Master01@(String), 123456(String)
+2025-09-11 16:07:44.186 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 16:07:44.307 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 16:07:44.382 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 16:11:36.140 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 16:11:36.156 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 16:11:36.166 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 16:13:53.401 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 16:13:53.402 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 16:13:53.403 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 16:14:40.579 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==>  Preparing: INSERT INTO My_User (Username, Userpass) VALUES (?, ?);
+2025-09-11 16:14:40.580 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - ==> Parameters: Gengetsu1!(String), 221319(String)
+2025-09-11 16:14:40.581 [main] DEBUG c.s.mapper.UserMapper.insertNewUser - <==    Updates: 1
+2025-09-11 16:14:40.582 [main] DEBUG c.s.m.UserMapper.insertNewUserInfo - ==>  Preparing: INSERT INTO My_User_Info(Userid, Usermoney, Userpoint, Uservip, Userphone, Userstate) VALUES (?, ?, ?, ?, ?, ?);
+2025-09-11 16:14:40.582 [main] DEBUG c.s.m.UserMapper.insertNewUserInfo - ==> Parameters: null, 0.0(BigDecimal), 0(Long), 无(String), null, 正常(String)
+2025-09-11 16:14:40.590 [main] DEBUG c.s.m.UserMapper.insertNewUserInfo - <==    Updates: 1
+2025-09-11 16:19:15.416 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 16:19:15.416 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 16:19:15.417 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
