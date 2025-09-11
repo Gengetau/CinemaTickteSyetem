@@ -2,6 +2,7 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/b24398ec-4abd-44d5-99a4-0f04bf7a995d/console.sql" dialect="MySQL" />
+    <file url="file://$PROJECT_DIR$/sql/CinemaTS_DB.sql" dialect="GenericSQL" />
     <file url="PROJECT" dialect="MySQL" />
   </component>
 </project>
