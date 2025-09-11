@@ -110,12 +110,18 @@ public class CinemaCtrl {
 			// 2.获取电影
 			Cinema selectedCinema = cinemaService.getCinemaById(cinemaId);
 			
-			// 3.打印电影信息
-			System.out.println(selectedCinema);
-			System.out.println("您选择的《" + selectedCinema.getCinemaName() + "》，观影时间为" + selectedCinema.getMovieTime());
+			if (selectedCinema != null) {
+				// 3.打印电影信息
+				System.out.println(selectedCinema);
+				System.out.println("您选择的《" + selectedCinema.getCinemaName() + "》，观影时间为" + selectedCinema.getMovieTime());
+				
+				// 4.选座和付款
+				selectSeatsAndConfirm(selectedCinema, user);
+			} else {
+				System.out.println("你搜索的电影编号不存在，请重试!");
+				return true;
+			}
 			
-			// 4.选座和付款
-			selectSeatsAndConfirm(selectedCinema, user);
 		} else if (object instanceof String) {
 			// 1.2用户输入电影名称
 			String cinemaName = (String) object;
@@ -126,6 +132,11 @@ public class CinemaCtrl {
 			
 			// 2.获取电影
 			List<Cinema> selectedCinemas = cinemaService.getCinemasByName(cinemaName);
+			
+			if (selectedCinemas.isEmpty()) {
+				System.out.println("您搜索的电影名称不存在，请重试！");
+				return true;
+			}
 			
 			// 3.判断获取到的列表有多少对象
 			if (selectedCinemas.size() > 1) {
@@ -179,8 +190,9 @@ public class CinemaCtrl {
 				for (int rol = 1; rol <= 5; rol++) {
 					String seatID = (cow + "" + rol);
 					boolean isSold = soldSeats.contains(seatID);
-					System.out.println(seatID + (isSold ? "√" : "×") + "\t");
+					System.out.print(seatID + (isSold ? "×" : "√") + "\t");
 				}
+				System.out.println();
 			}
 			
 			// 4.选择座位
@@ -196,6 +208,19 @@ public class CinemaCtrl {
 			// 6.预选座位
 			if (!selectedSeat.isEmpty()) {
 				String[] seatIds = selectedSeat.split("[,， ]+");
+				boolean pd = true;
+				for (int i = 1; i < seatIds.length; i++) {
+					if (seatIds[i - 1].equals(seatIds[i])) {
+						pd = false;
+						break;
+					}
+				}
+				
+				if (!pd) {
+					System.out.println("不能选择相同的座位!");
+					continue;
+				}
+				
 				for (String seatId : seatIds) {
 					if (!soldSeats.contains(seatId)) {
 						selectedSeats.add(seatId);
@@ -214,7 +239,7 @@ public class CinemaCtrl {
 			int count = selectedSeats.size();// int类型数据转化为BigDecimal类型
 			// 7.2调用折扣方法获得最终价格
 			System.out.println("您是" + user.getUserVip());
-			BigDecimal price = cinemaService.getCinemaPrice(user, count);
+			BigDecimal price = cinemaService.getCinemaPrice(user, count, selectedCinema.getCinemaPrice());
 			System.out.println("\n您已选择 " + selectedSeats.size() + " 个座位：" + String.join(", ", selectedSeats) + "总共：" + price + "￥");
 			String confirm = ScannerUtil.nextLine("确认并支付？ (Y/N): ");
 			

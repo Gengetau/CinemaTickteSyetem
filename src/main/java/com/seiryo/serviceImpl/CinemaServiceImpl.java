@@ -87,23 +87,25 @@ public class CinemaServiceImpl implements CinemaService {
 	 * @MethodName: getCinemaPrice
 	 * @Description: 获得最终价格
 	 */
-	public BigDecimal getCinemaPrice(User user, int count) {
-		// 1.设置总价
-		double price = 0.0;
-		// 1.判断数量
+	public BigDecimal getCinemaPrice(User user, int count, BigDecimal cinemaPrice) {
+		// 1.计算总价
+		cinemaPrice = cinemaPrice.multiply(new BigDecimal(count));
+		
+		// 2.判断数量
 		if (count >= 2) {
-			price = price * 0.95;
+			cinemaPrice = cinemaPrice.multiply(BigDecimal.valueOf(0.95));
 		}
 		
-		// 2.计算会员折扣
-		// 2.1获取会员折扣
-		Double discount = vipMapper.selectVipDiscountByVipName(user.getUsername());
+		// 3.计算会员折扣
+		// 3.1获取会员折扣
+		String vipName = user.getUserVip();
+		Double discount = vipMapper.selectVipDiscountByVipName(vipName);
 		
-		// 3.计算最终价格
-		price = price * discount;
+		// 4.计算最终价格
+		cinemaPrice = cinemaPrice.multiply(new BigDecimal(discount));
 		
-		// 4.返回BigDecimal类型的价格
-		return new BigDecimal(price);
+		// 5.返回BigDecimal类型的价格
+		return cinemaPrice;
 	}
 	
 	/**
@@ -115,13 +117,13 @@ public class CinemaServiceImpl implements CinemaService {
 		String cinemaName = ScannerUtil.nextLine("请输入电影名称：");
 		String releaseTimeStr = ScannerUtil.nextLine("请输入上映时间 (yyyy-MM-dd)：");
 		String cinemaPriceStr = ScannerUtil.nextLine("请输入电影票价：");
-		String movieTimeStr = ScannerUtil.nextLine("请输入观影时间 (HH:mm)：");
+		String movieTimeStr = ScannerUtil.nextLine("请输入观影时间 (yyyy-MM-dd-HH:mm)：");
 		String cinemaState = ScannerUtil.nextLine("请输入电影状态（上架/下架）：");
 		int cinemaSeats = ScannerUtil.getValidIntegerInput("请输入电影座位数：");
 		
 		// 转换日期和时间
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+		SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		try {
 			Date releaseTime = dateFormat.parse(releaseTimeStr);
 			Date movieTime = timeFormat.parse(movieTimeStr);
@@ -159,6 +161,7 @@ public class CinemaServiceImpl implements CinemaService {
 		System.out.println("========== 删除电影 ==========");
 		System.out.println("所有电影列表：");
 		List<Cinema> allCinemas = cinemaMapper.selectAllCinemas();
+		System.out.printf("%-10s \t %-18s \t %-19s \t %-16s \t %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
 		for (Cinema cinema : allCinemas) {
 			System.out.println(cinema);
 		}
@@ -184,6 +187,7 @@ public class CinemaServiceImpl implements CinemaService {
 		System.out.println("========== 修改电影 ==========");
 		System.out.println("所有电影列表：");
 		List<Cinema> allCinemas = cinemaMapper.selectAllCinemas();
+		System.out.printf("%-10s \t %-18s \t %-19s \t %-16s \t %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
 		for (Cinema cinema : allCinemas) {
 			System.out.println(cinema);
 		}

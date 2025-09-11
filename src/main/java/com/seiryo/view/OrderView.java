@@ -40,10 +40,10 @@ public class OrderView {
 	public void myOrderView(User user) {
 		boolean flag = true;
 		while (flag) {
-			System.out.println("========== 我的订单 ==========");
+			System.out.println("============== 我的订单界面 ==============");
 			System.out.println("========== " + user.getUsername() + "的订单如下 ===========");
 			// 1.打印标题行
-			System.out.printf("%-5s %-20s %-25s %-10s\n", "订单编号", "电影名字", "观影时间", "总价");
+			System.out.printf("%-15s \t %-15s \t %-15s \t %-10s\n", "订单编号", "电影名字", "观影时间", "总价");
 			
 			// 2.获取订单列表
 			List<Order> orders = orderService.selectAllOrders();
@@ -53,14 +53,14 @@ public class OrderView {
 				// 3.1打印订单信息
 				for (int i = 0; i < orders.size(); i++) {
 					Order order = orders.get(i);
-					System.out.printf("%-5d %-10s", (i + 1), order);
+					System.out.printf("%-12d \t %-10s \n", (i + 1), order);
 				}
 				
 				// 3.2选择操作
-				System.out.println("1.	查看订单详情");
+				System.out.println("\n1.	查看订单详情");
 				System.out.println("2.	取消订单");
 				System.out.println("3.	返回主界面");
-				int choice = ScannerUtil.getValidIntegerInput("请输入【1/2/3】进行操作", 1, 3);
+				int choice = ScannerUtil.getValidIntegerInput("请输入【1/2/3】进行操作：", 1, 3);
 				
 				// 3.3进入订单操作层
 				flag = orderCtrl.orderCtrl(choice, orders);

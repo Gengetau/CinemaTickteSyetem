@@ -1,6 +1,7 @@
 package com.seiryo.pojo;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -75,6 +76,9 @@ public class Order {
 	
 	@Override
 	public String toString() {
-		return String.format(" %-20s %-25s %-10s", cinema.getCinemaName(), cinema.getMovieTime(), totalPrice);
+		String price = totalPrice + "￥";
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String movieTime = sdf.format(cinema.getMovieTime());
+		return String.format(" %-20s %-25s %-10s", cinema.getCinemaName(), movieTime, price);
 	}
 }

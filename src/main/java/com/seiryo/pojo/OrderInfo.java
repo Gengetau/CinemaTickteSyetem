@@ -1,5 +1,6 @@
 package com.seiryo.pojo;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -70,6 +71,8 @@ public class OrderInfo {
 	
 	@Override
 	public String toString() {
-		return String.format("%-10s %-20s %-25s", position, orderState, orderDate);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String orderTime = sdf.format(orderDate);
+		return String.format("%-25s \t %-15s \t %-25s", orderTime, position, orderState);
 	}
 }

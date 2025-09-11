@@ -1,0 +1,288 @@
+2025-09-11 14:09:38.647 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:09:38.670 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:09:38.681 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:11:07.202 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:11:07.220 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:11:07.230 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:15:01.003 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:15:01.019 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:15:01.029 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:19:17.536 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:19:17.560 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:19:17.576 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:20:07.615 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:20:07.640 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:20:07.654 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:26:27.473 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:26:27.500 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:26:27.516 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:29:53.982 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:29:54.007 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:29:54.020 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:31:13.145 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 14:31:13.147 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 14:31:13.154 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 14:31:47.962 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 14:31:47.963 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 101(Long)
+2025-09-11 14:31:47.966 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 14:31:47.967 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 14:31:47.968 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 14:31:47.982 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 14:36:26.178 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:36:26.194 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:36:26.205 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:37:02.044 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:37:02.061 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:37:02.071 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:37:03.922 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 14:37:03.922 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 14:37:03.927 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 14:37:19.445 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 14:37:19.445 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: neko(String)
+2025-09-11 14:37:19.446 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 1
+2025-09-11 14:37:19.447 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 14:37:19.447 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 14:37:19.452 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 14:38:22.376 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:38:22.392 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:38:22.403 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:38:24.062 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 14:38:24.062 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 14:38:24.067 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 14:38:28.600 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 14:38:28.601 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: 猫(String)
+2025-09-11 14:38:28.602 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 1
+2025-09-11 14:38:28.604 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 14:38:28.604 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 102(Long)
+2025-09-11 14:38:28.608 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 3
+2025-09-11 14:39:33.612 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==>  Preparing: SELECT Vipdiscount FROM Vip_Info WHERE Vipname = ?;
+2025-09-11 14:39:33.612 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==> Parameters: Master01@(String)
+2025-09-11 14:39:33.614 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - <==      Total: 0
+2025-09-11 14:48:58.247 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:48:58.270 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:48:58.281 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:49:00.749 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 14:49:00.749 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 14:49:00.753 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 14:49:08.696 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 14:49:08.696 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 101(Long)
+2025-09-11 14:49:08.698 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 14:49:08.699 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 14:49:08.699 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 14:49:08.704 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 14:52:20.447 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 14:52:20.471 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 14:52:20.483 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 14:52:22.934 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 14:52:22.934 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 14:52:22.936 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 14:52:26.258 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 14:52:26.259 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 101(Long)
+2025-09-11 14:52:26.260 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 1
+2025-09-11 14:52:26.261 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==>  Preparing: SELECT Moi.Position FROM My_Order AS Mo JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Mo.Cinemaid = ?;
+2025-09-11 14:52:26.261 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - ==> Parameters: 101(Long)
+2025-09-11 14:52:26.266 [main] DEBUG c.s.m.O.selectSoldSeatsByCinemaId - <==      Total: 2
+2025-09-11 15:00:45.332 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==>  Preparing: SELECT Vipdiscount FROM Vip_Info WHERE Vipname = ?;
+2025-09-11 15:00:45.552 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - ==> Parameters: Master01@(String)
+2025-09-11 15:00:45.554 [main] DEBUG c.s.m.V.selectVipDiscountByVipName - <==      Total: 0
+2025-09-11 15:03:54.834 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:03:54.864 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:03:54.876 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:03:56.906 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:03:56.906 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:03:56.909 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:04:00.721 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 15:04:00.722 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 10(Long)
+2025-09-11 15:04:00.722 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 0
+2025-09-11 15:07:49.156 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:07:49.184 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:07:49.196 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:08:03.255 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:08:03.280 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:08:03.293 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:08:05.003 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:08:05.003 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:08:05.008 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:08:07.419 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 15:08:07.420 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 1(Long)
+2025-09-11 15:08:07.420 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 0
+2025-09-11 15:08:14.241 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 15:08:14.241 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: 你(String)
+2025-09-11 15:08:14.242 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 0
+2025-09-11 15:10:32.233 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:10:32.258 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:10:32.271 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:10:33.599 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:10:33.599 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:10:33.602 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:10:37.278 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 15:10:37.279 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: Ni(String)
+2025-09-11 15:10:37.279 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 0
+2025-09-11 15:10:40.294 [main] DEBUG c.s.m.C.selectCinemasByName - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaname LIKE CONCAT('%', ?, '%');-- 模糊查询
+2025-09-11 15:10:40.295 [main] DEBUG c.s.m.C.selectCinemasByName - ==> Parameters: 你(String)
+2025-09-11 15:10:40.296 [main] DEBUG c.s.m.C.selectCinemasByName - <==      Total: 0
+2025-09-11 15:10:44.440 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemaid = ?;
+2025-09-11 15:10:44.441 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - ==> Parameters: 1(Long)
+2025-09-11 15:10:44.442 [main] DEBUG c.s.m.CinemaMapper.selectCinemaById - <==      Total: 0
+2025-09-11 15:12:13.866 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:12:13.892 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:12:13.903 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:12:15.720 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:12:15.720 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:12:15.722 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:13:23.488 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:13:23.511 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:13:23.524 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:13:25.512 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:13:25.512 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:13:25.516 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:20:32.149 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:20:32.172 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:20:32.185 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:20:33.683 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:20:33.683 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:20:33.686 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:21:54.438 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:21:54.467 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:21:54.480 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:21:56.473 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:21:56.473 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:21:56.475 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:22:28.133 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:22:28.159 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:22:28.170 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:22:29.492 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:22:29.493 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:22:29.496 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:22:47.021 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:22:47.047 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:22:47.057 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:22:47.992 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:22:47.993 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:22:47.997 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:23:42.686 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:23:42.710 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:23:42.721 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:23:43.792 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:23:43.792 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:23:43.795 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:24:20.582 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:24:20.606 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:24:20.615 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:24:22.476 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:24:22.476 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:24:22.478 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:24:46.125 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:24:46.149 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:24:46.161 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:24:47.793 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:24:47.793 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:24:47.796 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:25:25.106 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:25:25.132 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:25:25.142 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:25:26.551 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==>  Preparing: SELECT * FROM Cinema_Info WHERE Cinemastate = '上架';
+2025-09-11 15:25:26.552 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - ==> Parameters: 
+2025-09-11 15:25:26.553 [main] DEBUG c.s.m.CinemaMapper.selectAllCinemas - <==      Total: 2
+2025-09-11 15:28:36.849 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:28:36.864 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:28:36.873 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:28:41.756 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:28:41.756 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:28:41.763 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:33:07.692 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:33:07.707 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:33:07.714 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:33:10.946 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:33:10.948 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:33:10.954 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:36:45.708 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:36:45.724 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:36:45.733 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:37:03.476 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:37:03.477 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:37:03.485 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:39:21.819 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:39:21.835 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:39:21.844 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:39:23.733 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:39:23.734 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:39:23.741 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:40:26.000 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:40:26.016 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:40:26.024 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:40:27.994 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:40:27.995 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:40:28.005 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:41:17.247 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:41:17.262 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:41:17.269 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:41:19.385 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:41:19.386 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:41:19.395 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:41:38.084 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:41:38.100 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:41:38.109 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:41:39.335 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:41:39.335 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:41:39.342 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:41:56.790 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:41:56.806 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:41:56.814 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:41:59.038 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:41:59.038 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:41:59.047 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:42:22.313 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:42:22.330 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:42:22.338 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:42:27.665 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:42:27.666 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:42:27.671 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:43:09.491 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:43:09.507 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:43:09.514 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:43:11.480 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:43:11.481 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:43:11.486 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:43:50.044 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:43:50.061 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:43:50.068 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:43:51.437 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:43:51.440 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:43:51.443 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:44:07.447 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:44:07.463 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:44:07.473 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:44:09.197 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:44:09.198 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:44:09.203 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:46:15.934 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:46:15.952 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:46:15.959 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:46:17.452 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:46:17.452 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:46:17.456 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:47:08.962 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:47:08.978 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:47:08.987 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:47:10.271 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:47:10.271 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:47:10.275 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:47:50.987 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:47:51.002 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:47:51.010 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:47:51.987 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:47:51.987 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:47:51.992 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:48:30.177 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:48:30.196 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:48:30.204 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:48:31.736 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:48:31.736 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:48:31.742 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5
+2025-09-11 15:48:54.408 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==>  Preparing: SELECT Mu.Userid, Mu.Username, Mu.Userpass, Mui.Usermoney, Mui.Userpoint, Mui.Uservip, Mui.Userphone, Mui.Userstate FROM My_User AS Mu JOIN My_User_Info AS Mui ON Mu.Userid = Mui.Userid
+2025-09-11 15:48:54.425 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - ==> Parameters: 
+2025-09-11 15:48:54.434 [main] DEBUG c.s.mapper.UserMapper.selectAllUsers - <==      Total: 3
+2025-09-11 15:48:55.816 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==>  Preparing: SELECT -- 订单信息 Mo.Orderid AS Order_Id, Mo.Totalprice AS Total_Price, -- 用户和用户详情信息 Mu.Userid AS User_Id, Mu.Username AS User_Name, Mu.Userpass AS User_Pass, Mui.Usermoney AS User_Money, Mui.Userpoint AS User_Point, Mui.Uservip AS User_Vip, Mui.Userphone AS User_Phone, Mui.Userstate AS User_State, -- 电影信息 Ci.Cinemaid AS Cinema_Id, Ci.Cinemaname AS Cinema_Name, Ci.Releasetime AS Release_Time, Ci.Cinemaprice AS Cinema_Price, Ci.Movietime AS Movie_Time, Ci.Cinemastate AS Cinema_State, Ci.Cinemaseats AS Cinema_Seats, -- 订单详情信息 Moi.Orderinfoid AS Order_Info_Id, Moi.Position AS Position, Moi.Orderstate AS Order_State, Moi.Orderdate AS Order_Date FROM My_Order AS Mo JOIN Cinema_Info Ci ON Ci.Cinemaid = Mo.Cinemaid JOIN My_User Mu ON Mo.Userid = Mu.Userid JOIN My_User_Info Mui ON Mu.Userid = Mui.Userid LEFT JOIN My_Order_Info Moi ON Mo.Orderid = Moi.Orderid WHERE Moi.Orderstate IN ('未观看', '已观看');
+2025-09-11 15:48:55.816 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - ==> Parameters: 
+2025-09-11 15:48:55.821 [main] DEBUG c.s.m.OrderMapper.selectAllOrders - <==      Total: 5

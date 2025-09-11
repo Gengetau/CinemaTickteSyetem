@@ -40,9 +40,11 @@ public class OrderCtrl {
 		switch (choice) {
 			case 1:// 查看订单
 				checkOrder(orders);
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 2:// 取消订单
 				cancelOrder(orders);
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 3:// 返回主界面
 				System.out.println("正在返回主界面");
@@ -64,10 +66,10 @@ public class OrderCtrl {
 		List<OrderInfo> orderInfos = orders.get(choice - 1).getOrderInfos();
 		
 		// 3,展示订单详情
-		System.out.printf("%-5s %-5s %-20s %-25s\n", "订单详情编号", "下单时间", "座位", "订单状态");
+		System.out.printf("%-15s \t %-15s \t %-15s \t %-25s\n", "订单详情编号", "下单时间", "座位", "订单状态");
 		for (int i = 0; i < orderInfos.size(); i++) {
 			OrderInfo orderInfo = orderInfos.get(i);
-			System.out.printf("%-5s %-10s", (i + 1), orderInfo);
+			System.out.printf("%-15s \t %-10s \n", (i + 1), orderInfo);
 		}
 	}
 	

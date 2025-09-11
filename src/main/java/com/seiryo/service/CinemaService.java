@@ -52,7 +52,7 @@ public interface CinemaService {
 	 * @MethodName: getCinemaPrice
 	 * @Description: 获得最终价格
 	 */
-	BigDecimal getCinemaPrice(User user, int count);
+	BigDecimal getCinemaPrice(User user, int count, BigDecimal cinemaPrice);
 	
 	/**
 	 * @MethodName: addCinema

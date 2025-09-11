@@ -35,7 +35,7 @@ public class CinemaView {
 	 */
 	public void cinemaView(User user) {
 		// 播放背景音乐
-		BGMPlayer.playBGM("JJ.wav");
+		BGMPlayer.playBGM("/JJ.wav");
 		boolean flag = true;
 		while (flag) {
 			System.out.println("========== 欢迎进入neko影城 ==========");
@@ -64,14 +64,14 @@ public class CinemaView {
 			System.out.println("========== 电影列表 ==========");
 			
 			// 2.打印标题行
-			System.out.printf("%-5s %-20s %-25s %-10s %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
+			System.out.printf("%-10s \t %-18s \t %-19s \t %-16s \t %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
 			
 			// 3.获取电影列表
 			List<Cinema> cinemas = cinemaService.getAllCinemas();
 			
 			// 4.打印电影列表
 			for (Cinema cinema : cinemas) {
-				System.out.printf("%-5d %-20s %-25s %-10s %-10s\n", cinema.getCinemaId(), cinema.getCinemaName(), cinema.getReleaseTime(), cinema.getCinemaPrice(), cinema.getMovieTime());
+				System.out.println(cinema);
 			}
 			
 			// 5.提示用户进入选择购票
