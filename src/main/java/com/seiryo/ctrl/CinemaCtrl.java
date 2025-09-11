@@ -269,14 +269,11 @@ public class CinemaCtrl {
 			newOrder.setTotalPrice(price);
 			orderService.addNewOrder(newOrder);
 			
-			// 10.获得新订单id
-			Long newOrderId = orderService.selectNewOrderId(newOrder);
-			
 			// 11.数据库：订单详情表添加新订单
 			Date today = new Date();
 			for (String seatId : selectedSeats) {
 				OrderInfo newOrderInfo = new OrderInfo();
-				newOrderInfo.setOrderId(newOrderId);
+				newOrderInfo.setOrderId(newOrder.getOrderId());
 				newOrderInfo.setPosition(seatId);
 				newOrderInfo.setOrderState("未观看");
 				newOrderInfo.setOrderDate(today);

@@ -67,17 +67,11 @@
     </select>
 
     <!--     添加新订单 -->
-    <insert id = "insertNewOrder" parameterType = "com.seiryo.pojo.Order">
+    <insert id = "insertNewOrder" parameterType = "com.seiryo.pojo.Order" useGeneratedKeys = "true"
+            keyProperty = "orderId">
         INSERT INTO My_Order(Cinemaid, Userid, Totalprice)
         VALUES (#{cinema.cinemaId}, #{user.userid}, #{totalPrice});
     </insert>
-
-    <!-- 返回新订单编号 -->
-    <select id = "selectNewOrderId" resultType = "Long" parameterType = "com.seiryo.pojo.Order">
-        SELECT Orderid
-        FROM My_Order
-        WHERE Orderid = #{orederId};
-    </select>
 
     <!-- 查询所有订单 -->
     <select id = "selectAllOrders" resultMap = "OrderWithDetailsResultMap">
