@@ -29,23 +29,23 @@ public class InformationView {
 			
 			// 1.输出信息
 			System.out.println("我的账号：" + "\t" + user.getUsername());
-			System.out.println("会员等级：" + "\t" + user.getUsername());
-			System.out.println("我的余额：" + "\t" + user.getUsername());
-			System.out.println("我的积分：" + "\t" + user.getUsername());
+			System.out.println("会员等级：" + "\t" + user.getUserVip());
+			System.out.println("我的余额：" + "\t" + user.getUserMoney());
+			System.out.println("我的积分：" + "\t" + user.getUserPoint());
 			// 手机号隐藏后四位
-			if (user.getUserPhone().isEmpty()) {
+			if (user.getUserPhone() == null) {
 				System.out.println("我的手机号：" + "\t" + "null");
 			} else {
-				System.out.println("我的手机号：" + "\t" + user.getUsername().substring(0, 7) + "****");
+				System.out.println("我的手机号：" + "\t" + user.getUserPhone().substring(0, 7) + "****");
 			}
 			System.out.println("\n=========== 信息操作 ==========");
-			System.out.println("1.	修改密码：");
-			System.out.println("2.	充值余额：");
-			System.out.println("3.	修改手机号：");
-			System.out.println("4.	退出：");
+			System.out.println("1.	修改密码");
+			System.out.println("2.	充值余额");
+			System.out.println("3.	修改手机号");
+			System.out.println("4.	退出");
 			
 			// 2.获取用户输入值
-			int choice = ScannerUtil.getValidIntegerInput("请输入【1/2/3/4】进行操作", 1, 4);
+			int choice = ScannerUtil.getValidIntegerInput("请输入【1/2/3/4】进行操作：", 1, 4);
 			
 			// 3.进入信息操作层
 			flag = informationCtrl.myInformationCtrl(choice, user);

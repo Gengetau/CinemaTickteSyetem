@@ -47,19 +47,6 @@ public class OrderServiceImpl implements OrderService {
 	}
 	
 	/**
-	 * @param order 新订单对象
-	 * @return 返回新订单id
-	 * @MethodName: selectNewOrderId
-	 * @Description: 查询新订单id
-	 */
-	public Long selectNewOrderId(Order order) {
-		try (SqlSession sqlSession = MyBatisUtil.getSqlSession()) {
-			OrderMapper orderMapper = sqlSession.getMapper(OrderMapper.class);
-			return orderMapper.selectNewOrderId(order);
-		}
-	}
-	
-	/**
 	 * @return 返回订单列表
 	 * @MethodName: selectAllOrders
 	 * @Description: 查询所有订单

@@ -178,12 +178,12 @@ public class CinemaCtrl {
 	 * @Description: 选座与付款流程
 	 */
 	private void selectSeatsAndConfirm(Cinema selectedCinema, User user) {
-		// 1.获取已售座位信息,创建已选座位列表
-		List<String> soldSeats = cinemaService.getSoldSeat(selectedCinema);
+		// 1.创建已选座位列表
 		List<String> selectedSeats = new ArrayList<>();
 		
 		// 2.购票循环
 		while (true) {
+			List<String> soldSeats = cinemaService.getSoldSeat(selectedCinema);
 			// 3.打印座位表
 			System.out.println("======= " + selectedCinema.getCinemaName() + "的座位表如下（√表示可购买；×表示已售出） =======");
 			for (int cow = 1; cow <= 4; cow++) {

@@ -85,10 +85,10 @@ public class OrderCtrl {
 		List<OrderInfo> orderInfos = orders.get(input - 1).getOrderInfos();
 		
 		// 4,展示订单详情
-		System.out.printf("%-5s %-5s %-20s %-25s\n", "订单详情编号", "下单时间", "座位", "订单状态");
+		System.out.printf("%-15s \t %-15s \t %-15s \t %-25s\n", "订单详情编号", "下单时间", "座位", "订单状态");
 		for (int i = 0; i < orderInfos.size(); i++) {
 			OrderInfo orderInfo = orderInfos.get(i);
-			System.out.printf("%-5s %-10s", (i + 1), orderInfo);
+			System.out.printf("%-15s \t %-10s \n", (i + 1), orderInfo);
 		}
 		
 		// 5.选择要取消的订单详情

@@ -43,7 +43,7 @@ public class ScannerUtil {
 	public static String phoneCheck(String prompt) {
 		while (true) {
 			String phone = nextLine(prompt);
-			if (phone.length() == 11 && phone.matches("[0-9]")) {
+			if (phone.matches("[0-9]{11}")) {
 				return phone;
 			}
 			System.out.println("输入错误，手机号应为11位纯数字组成，请重新输入！");

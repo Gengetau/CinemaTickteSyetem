@@ -22,14 +22,6 @@ public interface OrderService {
 	void addNewOrder(Order order);
 	
 	/**
-	 * @param order 新订单对象
-	 * @return 返回新订单id
-	 * @MethodName: selectNewOrderId
-	 * @Description: 查询新订单id
-	 */
-	Long selectNewOrderId(Order order);
-	
-	/**
 	 * @return 返回订单列表
 	 * @MethodName: selectAllOrders
 	 * @Description: 查询所有订单

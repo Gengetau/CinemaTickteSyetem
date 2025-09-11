@@ -57,16 +57,21 @@ public class InformationCtrl {
 		while (true) {
 			System.out.println("修改密码需要验证手机号后四位！");
 			// 1.验证用户手机号是否为空
-			if (user.getUserPhone().isEmpty()) {
+			if (user.getUserPhone() == null) {
 				System.out.println("手机号为空，请先添加手机号！");
 				return;
 			}
 			
 			// 1.获取用户输入的4位验证字符串
-			String phoneCode = ScannerUtil.nextLine("请输入您的手机号后四位：");
+			String phoneCode = ScannerUtil.nextLine("请输入您的手机号后四位【输入back退出】：");
+			
+			if (phoneCode.equalsIgnoreCase("back")) {
+				System.out.println("已退出密码修改!");
+				return;
+			}
 			
 			// 2.进行验证
-			if (user.getUserPhone().substring(8).equals(phoneCode)) {
+			if (user.getUserPhone().substring(7).equals(phoneCode)) {
 				// 3.获取新的密码
 				String newPass = ScannerUtil.passwordCheck("验证成功！请输入新的密码【输入back退出】：");
 				
@@ -120,12 +125,22 @@ public class InformationCtrl {
 			System.out.println("修改手机号需要验证密码！");
 			
 			// 1.获取用户输入的密码
-			String passCheck = ScannerUtil.nextLine("请输入您的密码：");
+			String passCheck = ScannerUtil.nextLine("请输入您的密码【输入back退出】：");
+			
+			if (passCheck.equalsIgnoreCase("back")) {
+				System.out.println("已退出密码修改!");
+				return;
+			}
 			
 			// 2.进行验证
 			if (user.getUserpass().equals(passCheck)) {
 				// 3.获取新的手机号
-				String newPhone = ScannerUtil.phoneCheck("验证成功！请输入新的手机号：");
+				String newPhone = ScannerUtil.phoneCheck("验证成功！请输入新的手机号【输入back退出】：");
+				
+				if (newPhone.equalsIgnoreCase("back")) {
+					System.out.println("已退出密码修改!");
+					return;
+				}
 				
 				// 4.更改手机号
 				user.setUserPhone(newPhone);
