@@ -1,7 +1,9 @@
 package com.seiryo.ctrl;
 
 import com.seiryo.pojo.Admin;
+import com.seiryo.pojo.Cinema;
 import com.seiryo.pojo.User;
+import com.seiryo.service.CinemaService;
 import com.seiryo.service.UserService;
 import com.seiryo.util.CaptchaUtil;
 import com.seiryo.util.ScannerUtil;
@@ -9,6 +11,7 @@ import com.seiryo.view.AdminView;
 import com.seiryo.view.CinemaView;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @author 11567
@@ -19,6 +22,7 @@ import java.math.BigDecimal;
  */
 public class UserCtrl {
 	private UserService userService;
+	private CinemaService cinemaService;
 	private AdminCtrl adminCtrl;
 	private CinemaView cinemaView;
 	private AdminView adminView;
@@ -30,6 +34,10 @@ public class UserCtrl {
 	 */
 	public void setUserService(UserService userService) {
 		this.userService = userService;
+	}
+	
+	public void setCinemaService(CinemaService cinemaService) {
+		this.cinemaService = cinemaService;
 	}
 	
 	/**
@@ -73,11 +81,14 @@ public class UserCtrl {
 				if (loginUser != null) {
 					cinemaView.cinemaView(loginUser);
 				}
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 2:// 用户注册
 				register();
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
-			case 3:// todo:预览
+			case 3:// 预览
+				preview();
 				break;
 			case 4:// 管理员登录
 				Admin loginAdmin = adminCtrl.adminLogin();
@@ -85,6 +96,7 @@ public class UserCtrl {
 				if (loginAdmin != null) {
 					adminView.adminView(loginAdmin);
 				}
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 5:// 退出系统
 				System.out.println("欢迎下次光临neko影城");
@@ -208,6 +220,25 @@ public class UserCtrl {
 			return true;
 		} else {
 			return false;
+		}
+	}
+	
+	/**
+	 * @MethodName: preview
+	 * @Description: 电影菜单预览
+	 */
+	public void preview() {
+		System.out.println("========== 电影列表 ==========");
+		
+		// 2.打印标题行
+		System.out.printf("%-5s %-20s %-25s %-10s %-10s\n", "电影编号", "电影名称", "上映时间", "电影价格", "观影时间");
+		
+		// 3.获取电影列表
+		List<Cinema> cinemas = cinemaService.getAllCinemas();
+		
+		// 4.打印电影列表
+		for (Cinema cinema : cinemas) {
+			System.out.printf("%-5d %-20s %-25s %-10s %-10s\n", cinema.getCinemaId(), cinema.getCinemaName(), cinema.getReleaseTime(), cinema.getCinemaPrice(), cinema.getMovieTime());
 		}
 	}
 }

@@ -78,12 +78,15 @@ public class CinemaCtrl {
 		switch (choice) {
 			case 1:// 电影列表
 				cinemaView.cinemaTicketView(user);
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 2:// 我的订单
 				orderView.myOrderView(user);
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 3:// 我的信息
 				informationView.myInformationView(user);
+				ScannerUtil.nextLine("输入任意键返回");
 				break;
 			case 4:// 返回登录页面
 				System.out.println("已退出登录，欢迎下次光临！");
