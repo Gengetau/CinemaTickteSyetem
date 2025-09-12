@@ -19,9 +19,10 @@ import java.util.List;
  * @dateTime 2025/9/10 21:38
  */
 public class VipServiceImpl implements VipService {
-	// 服务对象
+	// 定义依赖接口
 	private LogService logService;
 	
+	// 注入依赖
 	public void setLogService(LogService logService) {
 		this.logService = logService;
 	}

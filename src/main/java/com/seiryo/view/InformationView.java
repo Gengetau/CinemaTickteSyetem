@@ -14,6 +14,11 @@ import com.seiryo.util.ScannerUtil;
 public class InformationView {
 	private InformationCtrl informationCtrl;
 	
+	/**
+	 * @param informationCtrl 信息控制器
+	 * @MethodName: setInformationCtrl
+	 * @Description: 设置InformationCtrl
+	 */
 	public void setInformationCtrl(InformationCtrl informationCtrl) {
 		this.informationCtrl = informationCtrl;
 	}

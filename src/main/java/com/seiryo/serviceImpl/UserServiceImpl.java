@@ -21,8 +21,10 @@ import java.util.List;
  * @dateTime 2025/9/9 20:05
  */
 public class UserServiceImpl implements UserService {
+	// 定义依赖接口
 	private LogService logService;
 	
+	// 注入依赖
 	public void setLogService(LogService logService) {
 		this.logService = logService;
 	}
@@ -206,6 +208,10 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	
+	//======================================================
+	//==================== 管理员操作 =======================
+	//======================================================
+	
 	/**
 	 * @param admin 操作的管理员 (用于日志记录)
 	 * @MethodName: insertUserByAdmin
@@ -245,7 +251,7 @@ public class UserServiceImpl implements UserService {
 	/**
 	 * @param admin 操作的管理员 (用于日志记录)
 	 * @MethodName: deleteUserByAdmin
-	 * @Description: 管理员删除用户
+	 * @Description: 管理员删除用户（逻辑删除）
 	 */
 	public void deleteUserByAdmin(Admin admin) {
 		System.out.println("========== 删除用户 ==========");

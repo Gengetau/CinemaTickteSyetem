@@ -86,7 +86,7 @@ public class MainTest {
 		orderView.setOrderService(orderService);
 		informationView.setInformationCtrl(informationCtrl);
 		
-		// ============= 3. 一切准备就绪，启动程序！ =============
+		// ============= 3. 启动程序！ =============
 		mainView.mainView();
 	}
 }

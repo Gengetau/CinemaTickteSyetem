@@ -48,7 +48,7 @@ public class CaptchaUtil {
 		String captcha = generateCode(8);
 		System.out.println(captcha);// 展示验证码
 		// 提示用户输入
-		String code = ScannerUtil.nextLine("请输入上面验证码（区分大小写）:");
-		return code.equals(captcha);
+		String code = ScannerUtil.nextLine("请输入上面验证码（不区分大小写）:");
+		return code.equalsIgnoreCase(captcha);
 	}
 }

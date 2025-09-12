@@ -13,6 +13,11 @@ import com.seiryo.util.ScannerUtil;
 public class MainView {
 	private UserCtrl userCtrl;
 	
+	/**
+	 * @param userCtrl 用户控制器
+	 * @MethodName: setUserCtrl
+	 * @Description: 设置UserCtrl
+	 */
 	public void setUserCtrl(UserCtrl userCtrl) {
 		this.userCtrl = userCtrl;
 	}

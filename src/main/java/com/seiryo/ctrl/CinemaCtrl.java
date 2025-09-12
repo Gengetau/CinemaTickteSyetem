@@ -26,15 +26,19 @@ import java.util.List;
  * @dateTime 2025/9/9 22:07
  */
 public class CinemaCtrl {
+	// 定义视图层依赖
 	private CinemaView cinemaView;
 	private OrderView orderView;
 	private InformationView informationView;
-	private CinemaService cinemaService;
+	// 定义控制器依赖
 	private UserCtrl userCtrl;
+	// 定义服务层接口依赖
+	private CinemaService cinemaService;
 	private UserService userService;
 	private OrderService orderService;
 	private OrderInfoService orderInfoService;
 	
+	// 注入依赖
 	public void setCinemaView(CinemaView cinemaView) {
 		this.cinemaView = cinemaView;
 	}

@@ -26,9 +26,10 @@ import java.util.List;
  * @dateTime 2025/9/10 08:57
  */
 public class CinemaServiceImpl implements CinemaService {
-	// 服务对象
+	// 定义依赖接口
 	private LogService logService;
 	
+	// 依赖注入
 	public void setLogService(LogService logService) {
 		this.logService = logService;
 	}

@@ -20,10 +20,20 @@ public class CinemaView {
 	private CinemaCtrl cinemaCtrl;
 	private CinemaService cinemaService;
 	
+	/**
+	 * @param cinemaService 电影服务层
+	 * @MethodName: setCinemaService
+	 * @Description: 设置CinemaService
+	 */
 	public void setCinemaService(CinemaService cinemaService) {
 		this.cinemaService = cinemaService;
 	}
 	
+	/**
+	 * @param cinemaCtrl 电影控制器
+	 * @MethodName: setCinemaCtrl
+	 * @Description: 设置CinemaCtrl
+	 */
 	public void setCinemaCtrl(CinemaCtrl cinemaCtrl) {
 		this.cinemaCtrl = cinemaCtrl;
 	}

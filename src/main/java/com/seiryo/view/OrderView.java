@@ -19,6 +19,12 @@ public class OrderView {
 	private OrderService orderService;
 	private OrderCtrl orderCtrl;
 	
+	
+	/**
+	 * @param orderService 订单服务层
+	 * @MethodName: setOrderService
+	 * @Description: 设置OrderService
+	 */
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
 	}

@@ -21,9 +21,12 @@ import java.util.List;
  * @dateTime 2025/9/9 19:44
  */
 public class UserCtrl {
+	// 定义服务层依赖接口
 	private UserService userService;
 	private CinemaService cinemaService;
+	// 定义控制器依赖
 	private AdminCtrl adminCtrl;
+	// 定义视图层依赖
 	private CinemaView cinemaView;
 	private AdminView adminView;
 	

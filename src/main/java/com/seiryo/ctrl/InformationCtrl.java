@@ -14,9 +14,10 @@ import java.math.BigDecimal;
  * @dateTime 2025/9/10 17:04
  */
 public class InformationCtrl {
-	// 服务对象
+	// 定义服务层接口依赖
 	private UserService userService;
 	
+	// 注入依赖
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}

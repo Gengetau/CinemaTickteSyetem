@@ -13,9 +13,9 @@ public class BGMPlayer {
 	private static Clip bgmClip;
 	
 	/**
-	 * 背景音乐播放方法！
-	 *
 	 * @param musicPath 音乐文件在我们resources文件夹里的路径
+	 * @MethodName: playBGM
+	 * @Description: 背景音乐播放方法
 	 */
 	public static void playBGM(String musicPath) {
 		try {
@@ -52,7 +52,8 @@ public class BGMPlayer {
 	}
 	
 	/**
-	 * 停止音乐方法！
+	 * @MethodName: stopBGM
+	 * @Description: 停止音乐方法
 	 */
 	public static void stopBGM() {
 		if (bgmClip != null && bgmClip.isRunning()) {

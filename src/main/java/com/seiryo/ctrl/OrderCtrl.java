@@ -18,9 +18,11 @@ import java.util.List;
  * @dateTime 2025/9/10 15:49
  */
 public class OrderCtrl {
+	// 定义服务层接口依赖
 	private OrderService orderService;
 	private UserService userService;
 	
+	// 注入依赖
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
 	}
@@ -73,6 +75,11 @@ public class OrderCtrl {
 		}
 	}
 	
+	/**
+	 * @param orders 订单列表
+	 * @MethodName: cancelOrder
+	 * @Description: 取消订单
+	 */
 	private void cancelOrder(List<Order> orders) {
 		// 1.获取用户选择
 		int input = ScannerUtil.getValidIntegerInput("请选择要查看的订单：", 1, orders.size());

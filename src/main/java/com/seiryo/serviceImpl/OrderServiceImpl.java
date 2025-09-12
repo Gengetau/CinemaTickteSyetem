@@ -19,10 +19,11 @@ import java.util.List;
  * @dateTime 2025/9/10 14:43
  */
 public class OrderServiceImpl implements OrderService {
-	// 服务对象
+	// 定义依赖接口
 	private UserService userService;
 	private LogService logService;
 	
+	// 注入依赖
 	public void setLogService(LogService logService) {
 		this.logService = logService;
 	}
@@ -135,7 +136,7 @@ public class OrderServiceImpl implements OrderService {
 	
 	/**
 	 * @MethodName: deleteOrder
-	 * @Description: 删除订单
+	 * @Description: 删除订单（逻辑删除）删除订单详情
 	 */
 	public void deleteOrder(Admin admin) {
 		System.out.println("========== 删除订单 ==========");
@@ -176,19 +177,19 @@ public class OrderServiceImpl implements OrderService {
 		
 		String confirm = ScannerUtil.nextLine("确认并取消？ (Y/N): ");
 		
-		// 9.判断
+		// 判断
 		if ("y".equalsIgnoreCase(confirm)) {
-			// 10.改变订单状态
+			// 改变订单状态
 			selectedOI.setOrderState("订单已取消");
 			
-			// 11.更新数据库:改变订单状态
+			// 更新数据库:改变订单状态
 			deleteOrderInfo(selectedOI);
 			logService.insertLog(admin, "删除订单详情ID为" + selectedOI.getOrderInfoId() + "的订单详情成功");
-			// 12.更新余额和积分
+			// 更新余额和积分
 			user.setUserMoney(user.getUserMoney().add(cinema.getCinemaPrice()));
 			user.setUserPoint(user.getUserPoint() - cinema.getCinemaPrice().longValue());
 			
-			// 13.更新数据库
+			// 更新数据库
 			userService.updateUserMoneyAndPoints(user);
 		} else {
 			System.out.println("正在返回订单界面");

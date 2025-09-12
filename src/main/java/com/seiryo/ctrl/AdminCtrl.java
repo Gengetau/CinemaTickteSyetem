@@ -15,10 +15,13 @@ import com.seiryo.view.AdminView;
  * @dateTime 2025/9/10 11:14
  */
 public class AdminCtrl {
+	// 定义服务层依赖接口
 	private AdminService adminService;
 	private LogService logService;
+	// 定义视图层依赖
 	private AdminView adminView;
 	
+	// 注入依赖
 	public void setAdminService(AdminService adminService) {
 		this.adminService = adminService;
 	}

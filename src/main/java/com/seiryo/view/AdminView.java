@@ -19,6 +19,11 @@ import java.util.Map;
 public class AdminView {
 	private AdminCtrl adminCtrl;
 	
+	/**
+	 * @param adminCtrl 管理员控制器
+	 * @MethodName: setAdminCtrl
+	 * @Description: 设置AdminCtrl
+	 */
 	public void setAdminCtrl(AdminCtrl adminCtrl) {
 		this.adminCtrl = adminCtrl;
 	}

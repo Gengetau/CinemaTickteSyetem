@@ -52,8 +52,7 @@ public class ScannerUtil {
 	
 	/**
 	 * @param prompt 提示用户输入的信息
-	 * @return 编号返回Long类型的值
-	 * 名称返回String类型的值
+	 * @return 编号返回Long类型的值,名称返回String类型的值
 	 * @MethodName: getCinemaIdOrName
 	 * @Description: 识别用户输入的是编号还是名称并返回相应的值
 	 */
@@ -76,6 +75,7 @@ public class ScannerUtil {
 	 * @Description: 账号输入验证工具
 	 */
 	public static String nameCheck(String prompt) {
+		// 正则表达式
 		String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$";
 		while (true) {
 			String inputName = nextLine(prompt);
