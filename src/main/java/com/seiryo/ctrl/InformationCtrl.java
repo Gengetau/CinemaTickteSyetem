@@ -109,7 +109,7 @@ public class InformationCtrl {
 		}
 		
 		// 3.更新余额
-		user.setUserMoney(money);
+		user.setUserMoney(user.getUserMoney().add(money));
 		
 		// 4.更新数据库
 		userService.updateUserMoney(user);
