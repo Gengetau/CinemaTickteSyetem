@@ -6,7 +6,7 @@
 
 1.  **克隆项目**
     ```bash
-    git clone [https://github.com/YourUsername/CinemaTicketSystem.git](https://github.com/YourUsername/CinemaTicketSystem.git)
+    git clone [https://github.com/Gengetsu/CinemaTicketSystem.git](https://github.com/Gengetsu/CinemaTicketSystem.git)
     ```
 
 2.  **数据库设置**
